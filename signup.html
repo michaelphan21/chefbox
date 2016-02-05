@@ -20,9 +20,11 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
+    <!-- using different jquery file? Will it be compatible with the other's however> -->
+   <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--[endif]-->
 </head>
 <body>
 <!-- Navigation -->
@@ -50,7 +52,7 @@
                 <li>
                     <a href="#">&nbsp;&nbsp;Sign Up</a>
                 </li>
-                <li>
+               <!-- <li>
                     <a href="search.html">&nbsp;&nbsp;Search</a>
                 </li>
                 <li>
@@ -58,7 +60,7 @@
                 </li>
                 <li>
                     <a href="help.html">&nbsp;&nbsp;Help</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="howitworks.html">&nbsp;&nbsp;How it Works</a>
                 </li>
@@ -78,16 +80,43 @@
         Address1 : <input type="text" id="add1" placeholder="street, apt unit">
         <p> please enter the city you live in</p>
         Address2 : <input type="text" id="add2" placeholder="city ">
-        <div class="panel panel-default">
+       <!-- <div class="panel panel-default">
             <h4 class = "panel-title">
                 <a data-toggle="collapse" href="#countries">Country</a>
             </h4>
-            <div id="countries" class="panel-collapse collapse">
-                <ul class="panel-body">
-                    <li><a>country1</a></li>
-                    <li><a>country2</a></li>
-                    <li><a>country3</a></li>
-                </ul>
+            <div id="countries" class="panel-collapse collapse"> -->
+        <br><br>Country: <select name="countries">
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Albania">Albania</option>
+        <option value="Algeria">Algeria</option>
+        <option value="Andorra">Andorra</option>
+        <option value="Angola">Angola</option>
+        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Afghanistan"></option>
+        <option value="Afghanistan"></option>
+        <option value="Afghanistan"></option>
+        <option value="Afghanistan"></option>
+        <option value="Afghanistan"></option>
+        <option value="Afghanistan"></option>
+        <option value="Afghanistan"></option>
+        <option value="Afghanistan"></option>
+        </select>
+
+
+               <!-- <script>
+                    $(document).ready( function() {
+                        $.getJSON('assets/data/countries.json', function (data) {
+                            $.each(data.name, function () {
+                                console.log(data.name);
+                                var list = $("#details").append('<ul class="panel-body"></ul>');
+                                list.append('<li><a>data.name</a></li>');
+                            });
+                        });
+                    });
+
+                </script>-->
+
             </div>
         </div>
 
