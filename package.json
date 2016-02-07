@@ -2,10 +2,6 @@
   "name": "Chefbox",
   "version": "0.0.1",
   "author": "Chefbox Team",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com:ein3108/unicorn"
-  },
   "private": true,
   "scripts": {
     "start": "nodemon bin/www"
