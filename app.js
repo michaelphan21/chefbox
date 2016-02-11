@@ -15,6 +15,7 @@ var help = require('./routes/help');
 var discover = require('./routes/discover');
 var howitworks = require('./routes/howitworks');
 var becomeachef = require('./routes/becomeachef');
+var message = require('./routes/message');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use('/help', help);
 app.use('/discover', discover);
 app.use('/howitworks', howitworks);
 app.use('/becomeachef', becomeachef);
+app.use('/message', message);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -73,3 +75,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
