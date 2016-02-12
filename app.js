@@ -18,6 +18,7 @@ var discover = require('./routes/discover');
 var howitworks = require('./routes/howitworks');
 var becomeachef = require('./routes/becomeachef');
 var searchdata = require('./routes/searchdata');
+var message = require('./routes/message');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/discover', discover);
 app.use('/howitworks', howitworks);
 app.use('/becomeachef', becomeachef);
 app.use('/foodinfo', foodinfo);
+app.use('/message', message);
 
 app.get('/searchID', searchdata.sendInfo);
 
