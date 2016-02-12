@@ -31,6 +31,7 @@ function initializePage() {
 	});
 	$('.col-md-3 .btn-primary').click(function() {
 		console.log('primary button clicked');
+		/*
 		var divcontainer = $('#container');
 		var keywordsearch = $('#keyword-search');
 		keywordsearch.css("backgroundColor", "rgba(0,0,0,0.01)");
@@ -47,5 +48,6 @@ function initializePage() {
 			html += '<p></p>';
 			divcontainer = $(html).prependTo(divcontainer);
 		});
+		*/
 	});	
 }
