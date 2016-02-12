@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var monk = require('monk');
 var handlebars = require('express-handlebars');
+
+/* Custom Routes */
 var main = require('./routes/main');
 var search = require('./routes/search');
 var signup = require('./routes/signup');
@@ -15,6 +17,7 @@ var help = require('./routes/help');
 var discover = require('./routes/discover');
 var howitworks = require('./routes/howitworks');
 var becomeachef = require('./routes/becomeachef');
+var searchdata = require('./routes/searchdata');
 
 var app = express();
 
@@ -31,15 +34,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* Views */
 app.use('/', main);
 app.use('/search', search);
 app.use('/signup', signup);
-app.use('/foodinfo', foodinfo); 
 app.use('/login', login);
 app.use('/help', help);
 app.use('/discover', discover);
 app.use('/howitworks', howitworks);
 app.use('/becomeachef', becomeachef);
+app.use('/foodinfo', foodinfo);
+
+app.get('/searchID', searchdata.sendInfo);
+
+//app.get('/foodinfo/:id', foodinfo.foodInfo);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

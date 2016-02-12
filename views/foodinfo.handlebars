@@ -10,11 +10,10 @@
     <title>Chefbox</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet" />
-    <link href="css/main.css" />
+    <link href="../css/4-col-portfolio.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,6 +61,9 @@
             <a href="login">&nbsp;&nbsp;Log In</a>
           </li>
           <li>
+            <a href="signup">&nbsp;&nbsp;Become a Chef!</a>
+          </li>
+          <li>
             <a href="signup">&nbsp;&nbsp;Sign Up</a>
           </li>
           <li>
@@ -82,162 +84,102 @@
     </div>
       <!-- /.container -->
   </nav>
-
-  <!-- Page Content -->
   <div class="container">
-    <!-- Page Heading -->
     <div class="row" style="text-align: center;">
-      <div class="col-md-12">
+      <div class="col-md-12" align="cetner">
         <a href="#">
-          <img class="img-responsive" src="images/food1.jpg" alt="">
+          <img class="img-responsive" src="{{imageURL}}" alt="">
         </a>
       </div>
       <div class="col-md-12">
         <h1 class="page-header">
-          <small><b>Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi</b></small>
+          <small id="headline"><b>{{headline}}</b></small>
           <br>
-          <small><b>$5</b></small>
+          <small id="price"><b>{{price}}</b></small>
           <br>
-          <small>
-            35 ratings:&nbsp;<unli><b>4.5/5.0</b></unli>
+          <small id="avgratings">
+            {{numofratings}} ratings:&nbsp;<unli><b>{{avgrating}}/5.0</b></unli>
           </small>
         </h1>
-        <p align:"center">
-          Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.
-        </p>
-      </div>
+        <p align:"center">{{ingredientdetails}}</p>
+      </div>      
     </div>
-    <!-- /.row -->
     <div class="row" style="text-align: center;">
       <table>
         <thead>
           <tr>
+            <th>&nbsp;</th>
             <th style="text-align: center;">
               Calories
             </th>
+            <th>&nbsp;</th>
             <th style="text-align: center;">
               Type
             </th>
+            <th>&nbsp;</th>
             <th style="text-align: center;">
-            Ingredients
+              Ingredients
             </th>
+            <th>&nbsp;</th>
           </tr>
         </thead>
         <hr>
         <tbody>
           <tr>
-            <td>
-              568
-            </td>
-            <td>
-              pescatorian
-            </td>
-            <td>
-              Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder
-            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{type}}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{type}}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{ingredients}}</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           </tr>
         </tbody>
       </table>
       <hr>
     </div>
     <div class="row" style="text-align: center;">
-      <a href="#" class="btn btn-default">Instant order</a>
+      <table align="center">
+        <thead>
+        </thead>
+        <tbody>
+          <td>
+            <button class="btn-lg btn-default large">order now</button>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <button class="btn-lg btn-primary">pre-order</button>
+          </td>
+        </tbody>
+      </table>
     </div>
     <br><br><br>
-    <!-- Projects Row -->
-    <div class="row" style="text-align: center;"><b>3 Reviews</b></div>
+    <div class="row" style="text-align: center;"><b>{{numofreviews}} Reviews</b></div>
     <br>
-    <div class="row">
-      <form id="review-search" method="post" action="#">
-        <input type="text" id="review" style="text-align: center; width: 100%; margin: auto;" class="form-control" placeholder="search reviews" />
-      </form>
+    <div class="col-md-12">
+      <div class="input-group">
+        <input id="keyword-search" type="text" class="form-control" placeholder="search reviews" style="text-align: center;" />
+        <div class="input-group-btn" role="group">
+          <button style="background: #fff; border: none; text-shadow: none;">
+            <span class="image">
+              <img src="images/magnifying-glass32.png" alt="none" />
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
     <hr>
     <div class="row" style="text-align: center; width: 100%; margin: auto;">
+      {{#each reviews}}
       <div class="col-md-3 portfolio-item">
-        <b>
-          wonderful 5.0/5.0<p>Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper.</p>
-        </b>
-        </div>
-        <div class="col-md-3 portfolio-item">
-          <b>
-          delightful 4.5/5.0
-          <p>
-          Cras eget tellus orci. Suspendisse eget lacinia erat. Proin vitae tristique risus. Curabitur suscipit, lectus nec ultrices luctus, purus neque tincidunt est, vel feugiat diam tellus feugiat felis. Fusce placerat dictum pulvinar. Morbi luctus venenatis volutpat. Nullam tincidunt malesuada urna vel convallis. Pellentesque venenatis in risus id blandit. Etiam accumsan, metus in tristique faucibus, nisl sem venenatis eros, in ultrices justo sapien sit amet
-          sapien. Aenean ac elit leo.
-          </p>
-        </b>
-        </div>
-        <div class="col-md-3 portfolio-item">
-          <b>
-          great 4.5/5.0
-          <p>
-          Donec viverra urna sed est sodales convallis. Phasellus feugiat metus eu magna feugiat facilisis. Fusce cursus leo nisl, vel congue urna posuere a. Nullam velit erat, tempus vitae auctor et, semper sed eros. Sed suscipit feugiat eleifend. Morbi et lobortis magna. Fusce in euismod lectus. Morbi erat felis, semper in leo vitae, scelerisque bibendum nisi. Mauris ullamcorper egestas ornare. Nulla dapibus dictum nibh id porta.
-          </p>
-          </b>
-        </div>
-        <div class="col-md-3 portfolio-item">
-          <b>
-          Very nice 4.5/5.0
-          <p>
-          Fusce lobortis arcu eu diam ullamcorper, quis rutrum sapien sollicitudin. Nam felis diam, efficitur sed leo id, consequat lobortis mauris. Nam id fermentum magna. In hac habitasse platea dictumst. Cras eget est fermentum, cursus ligula ut, tristique ligula. Pellentesque rutrum accumsan dignissim. Fusce porttitor lorem orci, sit amet maximus eros sagittis ultrices. Duis porta, nunc a interdum viverra, lorem odio volutpat quam, id feugiat tortor ipsum ut
-          Mauris orci neque, venenatis a turpis a, viverra sodales ex. Nulla sit amet auctor neque. Quisque maximus porttitor purus, eu efficitur sapien vehicula quis. Praesent facilisis eu nunc et ultrices.
-          </p>
-          </b>
-        </div>
+        <b>{{reviewtitle}} {{rating}}</b>/5.0
+        <p>{{review}}</p>
       </div>
+      {{/each}}
     </div>
-    <!-- Projects Row -->
-    <!--
-    <div class="row">
-      <div class="col-md-3 portfolio-item">
-          <a href="#">
-              <img class="img-responsive" src="images/food6.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-md-3 portfolio-item">
-          <a href="#">
-              <img class="img-responsive" src="images/food7.jpg" alt="">
-          </a>
-      </div>
-    </div>
-    -->
-    <!-- /.row -->
+  </div>
 
-    <!-- Pagination -->
-    <!--
-    <div class="row text-center">
-      <div class="col-lg-12">
-        <ul class="pagination">
-          <li>
-            <a href="#">&laquo;</a>
-          </li>
-          <li class="active">
-            <a href="#">1</a>
-          </li>
-          <li>
-            <a href="#">2</a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">4</a>
-          </li>
-          <li>
-            <a href="#">5</a>
-          </li>
-          <li>
-            <a href="#">&raquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    -->
-    <!-- /.pagination -->
-    <hr>
-
-    <div id="map-container" class="col-md-12"></div>
+  <div id="map-container" class="col-md-12"></div>
     <script>
       var map;
       function initMap() {
@@ -262,13 +204,13 @@
   <!-- /.container -->
 
   <!-- jQuery -->
-  <script src="js/jquery.js"></script>
+  <script src="../js/jquery.js"></script>
 
   <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
 
   <!-- Google Map -->
-  <script src="js/map/googleMapSearch.js"></script>
+  <script src="../js/map/googleMapSearch.js"></script>
 
 </body>
 </html>

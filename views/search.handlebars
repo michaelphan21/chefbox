@@ -10,17 +10,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Chefbox</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet" />
-    <link href="css/main.css" />
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,10 +49,10 @@
             <a href="login">&nbsp;&nbsp;Log In</a>
           </li>
           <li>
-            <a href="signup">&nbsp;&nbsp;Sign Up</a>
+            <a href="signup">&nbsp;&nbsp;Become a Chef!</a>
           </li>
           <li>
-            <a href="search">&nbsp;&nbsp;Search</a>
+            <a href="signup">&nbsp;&nbsp;Sign Up</a>
           </li>
           <li>
             <a href="discover">&nbsp;&nbsp;Discover</a>
@@ -77,246 +73,62 @@
 
   <!-- Page Content -->
   <div class="container">
-    <div class="row" style="text-align: center;">
-      <table>
-        <col width="255">
-        <col width="120">
-        <thead>
-        </thead>
-        <tbody>
-          <td>
-            <form id="food-search" method="post" action="#" style="width: 100%;">
-              <input type="text" id="keyword" placeholder="What kind of food?" />
-            </form>
-          </td>
-          <td>
-            <a href="#"><img src="images/magnifying-glass32.png" alt="none" /></a>
-          </td>
-        </tbody>
-      </table>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="foodinfo"><img src="images/bg01.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="row" style="text-align: center;" id="rowcontainer">
+      <div class="col-md-12">
+        <div class="input-group">
+          <input id="keyword-search" type="text" class="form-control"  placeholder="What kind of food?" />
+          <div class="input-group-btn" role="group">
+            <button style="background: #fff; border: none; text-shadow: none;">
+              <span class="image">
+                <img src="images/magnifying-glass32.png" alt="none" />
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
       <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/bg02.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/bg03.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/bg04.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/food1.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/food2.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/food3.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/food4.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/food5.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">
-                <a href="foodinfo"><img src="images/food6.jpg" style="width: 220px;"/></a>
-              </t>
-              <td>
-                <b>$5</b>, <b>4.5</b>/5.0
-                <br>
-                Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi
-                <br><b>0.1 miles away</b>
-                <br>
-                <br><a href="foodinfo" class="btn btn-default">view</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-      <div class="col-md-3 portfolio-item">
-        <a href="#" class="btn btn-default">more</a>
+      {{#each fooditems}}
+        <div class="col-md-3 portfolio-item" id="{{id}}">
+          <table>
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <button style="background: #fff; border: none; text-shadow: none;">
+                    <span class="image">
+                      <img src="{{imageURL}}" style="width: 100%;" alt="none" />
+                    </span>
+                  </button>
+                </td>
+                <td>
+                  <b>{{price}}</b>, <b>{{rating}}</b>/5.0
+                  <br>
+                  {{description}}
+                  <br><b>{{location}}</b>
+                  <br>
+                  <table align="center">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <td>
+                        <br><button type="button" class="btn btn-default">view</button>
+                      </td>
+                      <td>&nbsp;&nbsp;</td>
+                      <td>
+                        <br><button type="button" class="btn btn-primary">order now</button>
+                      </td>                      
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+      {{/each}}
+      <div class="col-md-12 portfolio-item">
+        <button type="button" class="btn btn-primary" id="moreBtn">&nbsp;&nbsp;&nbsp;<b>more</b>&nbsp;&nbsp;&nbsp;</button>
       </div>
     </div>
   </div>
@@ -330,10 +142,22 @@
       </div>
     </footer>
   </div>
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
 
-  <!-- Bootstrap Core JavaScript -->
+  <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/search.js"></script>
+
+  <!-- custom -->
+  <script>
+  function loadMoreFoodItems() {
+
+  }
+
+  function loadFoodInfo() {
+    var id = $(this).attr('id');
+  }
+  </script>
+
+
 </body>
 </html>

@@ -1,0 +1,316 @@
+{
+	"fooditems": [
+		{
+			"id": "axZX2153xd33axqbnjfp",
+			"price": "$4.5",
+			"avgrating": "4.5",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food1.jpg"			
+		},
+		{
+			"id": "aZ3521jXxasdfx2pupukw",
+			"price": "$4.75",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "5384 Mt. Alifan Dr, San Diego, CA 92111",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food2.jpg"			
+		},
+		{
+			"id": "aZ352djjxkdfkw2234kl",
+			"price": "$5.0",
+			"rating": "4.6",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food3.jpg"			
+		},
+		{
+			"id": "aZ3521jdkvsldfkwdsfdh",
+			"price": "$5.0",
+			"rating": "4.7",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food4.jpg"			
+		},
+		{
+			"id": "aZ3521jXx1234985dfkw",
+			"price": "$5.0",
+			"rating": "4.2",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food5.jpg"
+		},
+		{
+			"id": "aZ3sxxslkd21jXxasdfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food6.jpg"
+		},
+		{
+			"id": "aZ3sxx2236d21jXxasdfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food7.jpg"
+		},
+		{
+			"id": "aZ3sxx223xxZZswqasdfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food10.jpg"
+		},
+		{
+			"id": "aZ3sTR2235Yadq5QAAdfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food11.jpg"
+		},
+		{
+			"id": "aZ3sxQW6W890jXxasdXXfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/bg04.jpg"
+		},
+		{
+			"id": "aZ3sx3p5RRBZdQQ3asdXXfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/bg02.jpg"
+		},
+		{
+			"id": "aZ3sx3p5yPPZNMBD3asdXfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/bg01.jpg"
+		},
+		{
+			"id": "aZ3sx3p5yPPZNMxZTYs3Xfkw",
+			"price": "$5.0",
+			"rating": "4.3",
+			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
+			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
+			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
+			"title": "Home-cooked Japanese with Kimchi",
+			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
+			"numofratings": "35",
+			"calories": "568",
+			"type": "pescatorian",
+			"numofreviews": "3",
+			"reviews": [
+				{
+					"acctID": "asdf",
+					"rating": "5.0",
+					"reviewtitle": "wonderful",
+					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+				}
+			],
+			"imageURL": "images/food5.jpg"
+		}
+	]
+}
