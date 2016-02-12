@@ -4,7 +4,7 @@
   "author": "Chefbox Team",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "sudo nodemon ./bin/www"
   },
   "dependencies": {
     "express-handlebars": "~3.0.0",

@@ -47,7 +47,8 @@ app.use('/becomeachef', becomeachef);
 app.use('/foodinfo', foodinfo);
 app.use('/message', message);
 
-app.get('/searchID', searchdata.sendInfo);
+app.get('/searchID', searchdata.sendIndex);
+app.get('/searchData', searchdata.sendData);
 
 app.get('/foodinfo/:id', foodinfo.foodInfo);
 
