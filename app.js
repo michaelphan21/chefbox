@@ -50,8 +50,6 @@ app.use('/message', message);
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
 
-app.get('/foodinfo/:id', foodinfo.foodInfo);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
