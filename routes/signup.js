@@ -12,7 +12,7 @@ var persons = require("../assets/data/people.json");
 });*/
 
 
-router.get('/', function(req, res){
+router.randfunction = function('/', function(req, res){
     console.log("work?");
     var newmember = {
         username: req.query.username,

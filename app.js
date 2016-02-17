@@ -49,6 +49,7 @@ app.use('/message', message);
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
+app.get('/signup',signup.randfunction);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
