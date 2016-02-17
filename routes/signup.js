@@ -12,7 +12,7 @@ var persons = require("../assets/data/people.json");
 });*/
 
 
-router.randfunction = function('/', function(req, res){
+router.randfunction = function(req,res){
     console.log("work?");
     var newmember = {
         username: req.query.username,
@@ -21,6 +21,6 @@ router.randfunction = function('/', function(req, res){
     }
     persons['members'].push(newmember);
     res.render('signup',persons);
-});
+};
 
 module.exports = router;
