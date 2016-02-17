@@ -1,3 +1,7 @@
+/* This is a sign up controller for 
+ * the previous version of the sign up view
+ */
+
 var LoginModalController = {
     tabsElementName: ".logmod__tabs li",
     tabElementName: ".logmod__tab",
