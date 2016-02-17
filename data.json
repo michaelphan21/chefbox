@@ -131,23 +131,53 @@
 			"id": "aZ3sxxslkd21jXxasdfkw",
 			"price": "$5.0",
 			"rating": "4.3",
-			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
-			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
-			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
-			"title": "Home-cooked Japanese with Kimchi",
+			"description": "Dried vegetarian curry with nan bread",
+			"location": "8645 Regents Drive, San Diego, CA 92122",
+			"ingredients": "Lime, red pepper, mint leaves, lentils, chopped almonds, yellow pepper, milk, pepper, salt, cayenne pepper, and nan bread",
+			"headline": "Try this exotic dried vegetable and nut curry to sooth the soul",
+			"title": "soothing the soul is a lie",
 			"ingredientdetails": "Ingredients: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ex ac aliquet suscipit. In tempor tortor vel nisl ornare fermentum. Duis condimentum fermentum dui eget molestie. Phasellus enim urna, dignissim sit amet consectetur in, luctus eu est.",
-			"numofratings": "35",
-			"calories": "568",
-			"type": "pescatorian",
-			"numofreviews": "3",
+			"numofratings": "42",
+			"calories": "360",
+			"type": "vegetarian",
+			"numofreviews": "20",
 			"reviews": [
 				{
 					"acctID": "asdf",
 					"rating": "5.0",
 					"reviewtitle": "wonderful",
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
-				}
+				},
+			  {
+				"acctID": "asdf",
+				"rating": "5.0",
+				"reviewtitle": "wonderful",
+				"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+			  },
+			  {
+				"acctID": "asdf",
+				"rating": "5.0",
+				"reviewtitle": "wonderful",
+				"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+			  },
+			  {
+				"acctID": "asdf",
+				"rating": "5.0",
+				"reviewtitle": "wonderful",
+				"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+			  },
+			  {
+				"acctID": "asdf",
+				"rating": "5.0",
+				"reviewtitle": "wonderful",
+				"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+			  },
+			  {
+				"acctID": "asdf",
+				"rating": "5.0",
+				"reviewtitle": "wonderful",
+				"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
+			  }
 			],
 			"imageURL": "images/food6.jpg"
 		},
