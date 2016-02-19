@@ -171,6 +171,7 @@
           </td>
         </tbody>
       </table>
+    </div>
     <br><br><br>
     <div class="row" style="text-align: center;"><b>{{numofreviews}} Reviews</b></div>
     <br>
@@ -195,15 +196,19 @@
       </div>
       {{/each}}
     </div>
-  </div>
 
-  <div id="map-container" class="col-md-12"></div>
+    <div id="map-container" class="col-md-12"></div>
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map-container'), {
-          center: {lat: 32.843, lng: -117.258},
+          center: {lat: 32.878484, lng: -117.213509},
           zoom: 13
+        });
+        var lat_lng = {lat: 32.878484, lng: -117.213509};
+        var marker = new google.maps.Marker({
+          position: lat_lng,
+          map: map,
         });
       }
     </script>

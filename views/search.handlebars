@@ -72,10 +72,10 @@
 
 
   <!-- Page Content -->
-  <div class="container" style="text-align: center; position: relative; z-index: 1" id="container">
+  <div class="container" style="text-align: center; position: relative;" id="container">
     <div class="form-group">
       <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">
-        <input id="keyword-search" type="text" class="form-control"  placeholder="What kind of food?" style="text-align: center;"/>
+        <input id="keyword-search" type="text" class="form-control"  placeholder="What kind of food do you have in mind?" style="text-align: center;"/>
         <div class="input-group-btn" role="group">
           <button style="background: #fff; border: none; text-shadow: none; padding: none;">
             <span>
@@ -86,49 +86,113 @@
       </div>
     </div>
     <hr>
+    <div class="row" style="height: 480px; width: 100%; margin: auto; padding: 0 20px 0 20px; text-align: center;" >
+      <div class="col-md-12 portfolio-item" id="map-container" style="height: 480px; width: 100%; margin: auto; padding: 0 20px 0 20px; "></div>
+    </div>
+    <hr>
+    <div class="row" style="text-align: center; width: 100%; margin: auto;">
       {{#each fooditems}}
-        <div class="col-md-3 portfolio-item" id="{{id}}" style="text-align: center;">
-            <table>
-            <thead>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <button style="background: #fff; border: none; text-shadow: none;">
-                    <span class="image">
-                      <img src="{{imageURL}}" style="width: 100%;" alt="none" />
-                    </span>
-                  </button>
-                </td>
-                <td>
-                  <b>{{price}}</b>, <b>{{rating}}</b>/5.0
-                  <br>
-                  {{description}}
-                  <br><b>{{location}}</b><br>
-                  <b>There are : {{count}} : items left</b>
-                  <br>
-                  <table align="center">
-                    <thead>
-                    </thead>
-                    <tbody>
-                      <td>
-                        <br><button type="button" class="btn btn-default">view</button>
-                      </td>
-                      <td>&nbsp;&nbsp;</td>
-                      <td>
-                          <form id="ordering" method="get" action="/decCounter">
-                        <br><button type="button" class="btn btn-primary">order now</button>
-                          </form>
-                      </td>                      
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <hr>
+      <div class="col-md-3 portfolio-item" id="{{id}}" style="text-align: center;">
+          <table>
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <button style="background: #fff; border: none; text-shadow: none;">
+                  <span class="image">
+                    <img src="{{imageURL}}" style="width: 100%;" alt="none" />
+                  </span>
+                </button>
+              </td>
+              <td>
+                <b>{{price}}</b>, <b>{{rating}}</b>/5.0
+                <br>
+                {{description}}
+                <br><b>{{location}}</b><br>
+                <b>There are : {{count}} : items left</b>
+                <br>
+                <table align="center">
+                  <thead>
+                  </thead>
+                  <tbody>
+                    <td>
+                      <br><button type="button" class="btn btn-default">view</button>
+                    </td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td>
+                        <form id="ordering" method="get" action="/decCounter">
+                      <br><button type="button" class="btn btn-primary">order now</button>
+                        </form>
+                    </td>                      
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr>
       {{/each}}
+    </div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map-container'), {
+          center: {lat: 32.878484, lng: -117.213509},
+          zoom: 13
+        });
+        var lat_lng1 = {lat: 32.878484, lng: -117.213509};
+        var lat_lng2 = {lat: 32.877946, lng: -117.23287};
+        var lat_lng3 = {lat: 32.870494, lng: -117.238939};
+        var lat_lng4 = {lat: 32.870521, lng: -117.217105};
+        var lat_lng5 = {lat: 32.868592, lng: -117.220820};
+        var lat_lng6 = {lat: 32.874389, lng: -117.241458};
+        var lat_lng7 = {lat: 32.878484, lng: -117.213509};
+        var lat_lng8 = {lat: 32.869569, lng: -117.231897};
+        var lat_lng9 = {lat: 32.884414, lng: -117.211912};
+
+        var marker1 = new google.maps.Marker({
+          position: lat_lng1,
+          map: map,
+        });
+        var marker2 = new google.maps.Marker({
+          position: lat_lng2,
+          map: map,
+        });
+        var marker3 = new google.maps.Marker({
+          position: lat_lng3,
+          map: map,
+        });
+        var marker4 = new google.maps.Marker({
+          position: lat_lng4,
+          map: map,
+        });
+        var marker5 = new google.maps.Marker({
+          position: lat_lng5,
+          map: map,
+        });
+        var marker6 = new google.maps.Marker({
+          position: lat_lng6,
+          map: map,
+        });
+        var marker7 = new google.maps.Marker({
+          position: lat_lng7,
+          map: map,
+        });
+        var marker8 = new google.maps.Marker({
+          position: lat_lng8,
+          map: map,
+        });
+        var marker9 = new google.maps.Marker({
+          position: lat_lng9,
+          map: map,
+        });
+      }
+    </script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=initMap" async defer></script>
+    <div class="row">
       <div class="col-md-12 portfolio-item">
         <button type="button" class="btn btn-primary" id="moreBtn">&nbsp;&nbsp;&nbsp;<b>more</b>&nbsp;&nbsp;&nbsp;</button>
       </div>
@@ -146,9 +210,12 @@
     </footer>
   </div>
   -->
+
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/search.js"></script>
+  <script src="../js/map/googleMapSearch.js"></script>
+
 
   <!-- custom -->
   <script>
