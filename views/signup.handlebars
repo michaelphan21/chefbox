@@ -11,11 +11,11 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet" />
-
     <!-- Custom CSS -->
     <link href="css/4-col-portfolio.css" rel="stylesheet" />
     <link href="css/main.css" />
     <link href="css/signup.css" rel = "stylesheet" />
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,7 +78,7 @@
           <p class="message">Not registered?<a href="#">&nbsp;&nbsp;Create an account</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="help">Help</a></p>
           <p class="message"></p>
         </form>
-        <form class="register-form">
+        <form class="register-form" method="get" action="/signup">
           <input type="text" placeholder="name"/>
           <input type="password" placeholder="password"/>
           <input type="password" placeholder="confirm password"/>
@@ -101,12 +101,13 @@
     </div>
 
     <!-- jQuery -->
+   <!-- <script src="js/jquery.js"></script> -->
     <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
     <script src="js/signup.js"></script>
+
 
     <script>
       $('.message a').click(function(){

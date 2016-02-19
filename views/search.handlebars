@@ -88,7 +88,7 @@
     <hr>
       {{#each fooditems}}
         <div class="col-md-3 portfolio-item" id="{{id}}" style="text-align: center;">
-          <table>
+            <table>
             <thead>
             </thead>
             <tbody>
@@ -104,7 +104,8 @@
                   <b>{{price}}</b>, <b>{{rating}}</b>/5.0
                   <br>
                   {{description}}
-                  <br><b>{{location}}</b>
+                  <br><b>{{location}}</b><br>
+                  <b>There are : {{count}} : items left</b>
                   <br>
                   <table align="center">
                     <thead>
@@ -115,7 +116,9 @@
                       </td>
                       <td>&nbsp;&nbsp;</td>
                       <td>
+                          <form id="ordering" method="get" action="/decCounter">
                         <br><button type="button" class="btn btn-primary">order now</button>
+                          </form>
                       </td>                      
                     </tbody>
                   </table>

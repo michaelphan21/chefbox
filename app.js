@@ -20,6 +20,7 @@ var becomeachef = require('./routes/becomeachef');
 var searchdata = require('./routes/searchdata');
 var message = require('./routes/message');
 
+
 var app = express();
 
 // view engine setup
@@ -49,7 +50,8 @@ app.use('/message', message);
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
-app.get('/signup',signup.randfunction);
+app.get('/signup',signup.addMemtoPage);
+app.get('/decCounter',searchdata.dcrCounter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
