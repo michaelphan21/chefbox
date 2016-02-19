@@ -3,7 +3,8 @@
     {
       "username": "Doug Engelbart",
       "password": "helloworld",
-      "Address": "Bologna, Italy"
+      "cfrmpassword": "helloworld",
+      "email": "gg@hotmail.co.uk"
     }
   ]
 }

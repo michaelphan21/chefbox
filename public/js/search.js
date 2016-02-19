@@ -31,6 +31,15 @@ function initializePage() {
 	});
 	$('.col-md-3 .btn-primary').click(function() {
 		console.log('primary button clicked');
+		var foodID = $(this).closest('.col-md-3.portfolio-item').prop('price');
+		console.log(foodID);
+		var foodInfoURL = "/searchID?id=" + foodID;
+		$.get(foodInfoURL, function(data){
+			console.log(foodInfoURL);
+			//var newcount = data['count']--;
+			//data['count'] = newcount;
+		});
+
 		/*
 		var divcontainer = $('#container');
 		var keywordsearch = $('#keyword-search');

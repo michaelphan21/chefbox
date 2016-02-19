@@ -22,6 +22,7 @@ var message = require('./routes/message');
 var profile = require('./routes/profile');
 var success = require('./routes/success');
 
+
 var app = express();
 
 // view engine setup
@@ -53,7 +54,8 @@ app.use('/success', success);
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
-app.get('/signup',signup.randfunction);
+app.get('/signup',signup.addMemtoPage);
+app.get('/decCounter',searchdata.dcrCounter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
