@@ -1,9 +1,3 @@
-/*'use strict';
-
-$(document).ready(function() {
-    initializePage();
-});*/
-
 var express = require('express');
 var router = express.Router();
 var app = express();
@@ -11,6 +5,9 @@ var http = require('http').Server(app);
 //loads data of people.json into persons
 var persons = require("../assets/data/people.json");
 
+router.get('/', function(req, res) {
+    res.render('signup');
+})
 
 
 /*not necessary until we figure out databases
@@ -24,6 +21,7 @@ var Mongoose = require('mongoose');*/
     "email": String
 })*/
 
+/*
 
 router.addMemtoPage = function(req,res){
     console.log("work?");
@@ -42,5 +40,5 @@ router.addMemtoPage = function(req,res){
     }
     res.render('signup',persons);
 };
-
+*/
 module.exports = router;
