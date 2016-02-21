@@ -5,7 +5,11 @@
 			"price": "$4.5",
 			"avgrating": "4.5",
 			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location": 
+				{
+					"lat": 32.879092,
+					"lng": -117.243386
+				},
 			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
 			"headline": "Home-cooked Japanese style meal with onigiri, miso, tofu, spiced anchovies and kimchi",
 			"title": "Home-cooked Japanese with Kimchi",
@@ -30,7 +34,11 @@
 			"price": "$4.75",
 			"rating": "4.3",
 			"description": "Salmon and Cole Slaw",
-			"location": "5384 Mt. Alifan Dr, San Diego, CA 92111",
+			"location": 
+				{
+					"lat": 32.877946,
+					"lng": -117.23287
+				},
 			"ingredients": "Salmon, Cabbage, Carrot, Mayonnaise, Wine Vinegar, Celery Seed, Lemon, Salt, Pepper",
 			"headline": "Grilled salmon with grapefruit cole slaw",
 			"title": "Grilled salmon with grapefruit cole slaw",
@@ -55,7 +63,11 @@
 			"price": "$5.0",
 			"rating": "4.6",
 			"description": "Anchovies, Tofu, Brown rice, Miso, Napa cabbage, Kimchi",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location": 
+				{
+					"lat": 32.870494,
+					"lng": -117.238939
+				},
 			"ingredients": "Pork, Barbeque Sauce, Cheddar, Lettuce, Salt, Pepper, Suggar",
 			"headline": "Jordan's pulled pork lettuce wrap with secret sauce",
 			"title": "Jordan's pulled pork lettuce wrap with secret sauce",
@@ -80,7 +92,11 @@
 			"price": "$11.50",
 			"rating": "2.5",
 			"description": "Diced vegetables and stuff in a pot",
-			"location": "5401 Gilman Dr, San Diego, CA 92093",
+			"location":
+				{
+					"lat": 32.870521,
+					"lng": -117.217105
+				},
 			"ingredients": "????",
 			"headline": "Train wreck of diced vegetable and strange egg like liquid",
 			"title": "Train wreck of diced vegetable and strange egg like liquid",
@@ -112,7 +128,11 @@
 			"price": "$5.0",
 			"rating": "4.2",
 			"description": "Home-cooked Japanese style meal",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.868592,
+					"lng": -117.220820
+				},
 			"ingredients": "Pacific mackeral, Seaweed, Radish, Spinach, Garlic, Salt, Pepper",
 			"headline": "Home-cooked Japanese style meal",
 			"title": "Home-cooked Japanese style meal",
@@ -137,7 +157,11 @@
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "Dried vegetarian curry with nan bread",
-			"location": "8645 Regents Drive, San Diego, CA 92122",
+			"location":
+				{
+					"lat": 32.874389,
+					"lng": -117.241458
+				},
 			"ingredients": "Lime, red pepper, mint leaves, lentils, chopped almonds, yellow pepper, milk, pepper, salt, cayenne pepper, and nan bread",
 			"headline": "Try this exotic dried vegetable and nut curry to sooth the soul",
 			"title": "Dried vegetable and nut curry",
@@ -192,7 +216,11 @@
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "sausage taco with cream sauce",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.878484,
+					"lng": -117.213509
+				},
 			"ingredients": "sausage, bun, cream sauce",
 			"headline": "Luke's sausage taco with cream sauce",
 			"title": "Luke's sausage taco with cream sauce",
@@ -217,7 +245,11 @@
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "Garden salad with oriental dressing and grilled salmon",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.869569,
+					"lng": -117.231897
+				},
 			"ingredients": "Anchovies, Tofu, Brown rice, Miso, Seaweed, Carrots, Napa cabbage, Sesame seeds, Kimchi, Red pepper powder",
 			"headline": "Michael's garden salad with oriental dressing and grilled salmon",
 			"title": "Garden salad with oriental dressing and grilled salmon",
@@ -242,7 +274,11 @@
 			"price": "$5.0",
 			"rating": "4.3",
 			"description": "Craft steak burger, a nice companion for a San Diegan brewary IPA",
-			"location": "8910 Villa La Jolla Dr, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.884414,
+					"lng": -117.211912
+				},
 			"ingredients": "Beef patty, red onion, lettuce, tomato, slice cheese, wheat bread",
 			"headline": "Jasmine's craft steak burger",
 			"title": "Jasmine's craft steak burger",
@@ -267,7 +303,11 @@
 			"price": "$6.0",
 			"rating": "4.3",
 			"description": "Chicken curry with nan bread",
-			"location": "8913 Villa La Jolla Dr, San Diego, CA 92122",
+			"location":
+				{
+					"lat": 32.889190,
+					"lng": -117.222403
+				},
 			"ingredients": "milk, chicken, basil leaves, nan bread, vegetable oil, pepper",
 			"headline": "The best home made Chicken curry you'll ever find in Villa La Jolla Drive",
 			"title": "Home-cooked Chicken curry with nan bread",
@@ -298,7 +338,11 @@
 			"price": "",
 			"rating": "4.7",
 			"description": "Kimberly's Irish smoked salmon canapes",
-			"location": "3576 Nobel Drive, San Diego, CA 92037",
+			"location":
+				{
+					"lat": 32.867791,
+					"lng": -117.234824
+				},
 			"ingredients": "smoked salmon, cream cheese, fresh lemon juice, chives, salt, heavy cream, Worcestershire Sauce, horseradish",
 			"headline": "Kimberly's Irish smoked salmon canapes",
 			"title": "Love where you live, free salmon canapes sampling",
@@ -329,7 +373,11 @@
 			"price": "$4.65",
 			"rating": "4.0",
 			"description": "Open sandwich with goat cheese, chery tomatoes, spinach, and salami",
-			"location": "3401 Gilman Dr, San Diego, CA 92093",
+			"location":
+				{
+					"lat": 32.874577,
+					"lng": -117.222342
+				},
 			"ingredients": "Avocado, cherry tomatoes, herbed ciabatta bread, dressing, goat cheese, swiss cheese, and salami",
 			"headline": "Irene's open sandwich with goat cheese, chery tomatoes and salami",
 			"title": "Home-cooked Japanese with Kimchi",
