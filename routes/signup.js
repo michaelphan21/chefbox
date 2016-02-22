@@ -2,8 +2,11 @@ var express = require('express');
 var router = express.Router();
 var app = express();
 var http = require('http').Server(app);
-//loads data of people.json into persons
-var persons = require("../assets/data/people.json");
+//loads data of people.json into persons 
+// HS: We can't do this since Javascript doesn't allow it to download any
+// JSON files on the client side because of security reasons
+//var persons = require("../assets/data/people.json");
+
 
 router.get('/', function(req, res) {
     res.render('signup');

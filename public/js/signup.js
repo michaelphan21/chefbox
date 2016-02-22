@@ -133,8 +133,19 @@ var SignupModalController = {
           user["email"] = base.signupInputEmail.val();
 
           console.log("user.password:"+user["password"]);
+          console.log("initializePage()");
 
-          //JSON.Stringify(user); // send this to the mongoDB
+          var reg_data_url = "/signupdata?username="
+                            +user["username"]
+                            +"&password="
+                            +user["password"]
+                            +"&email="
+                            +user["email"];
+          alert("Signed up successfully. Welcome "+user["username"]+"!");
+          $.get(reg_data_url, function(data) {
+            // returning an email address
+            document.location.href = "/search?username="+data.username+"&email="+data.email;
+          });
         }
       }
     });

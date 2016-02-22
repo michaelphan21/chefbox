@@ -11,6 +11,7 @@ var handlebars = require('express-handlebars');
 var main = require('./routes/main');
 var search = require('./routes/search');
 var signup = require('./routes/signup');
+var signupdata = require('./routes/signupdata');
 var foodinfo = require('./routes/foodinfo');
 var login = require('./routes/login');
 var help = require('./routes/help');
@@ -54,6 +55,7 @@ app.use('/success', success);
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
+app.get('/signupdata', signupdata.sendData);
 //app.get('/signup',signup.addMemtoPage);
 //app.get('/decCounter',searchdata.dcrCounter);
 
