@@ -29,9 +29,9 @@
   {{> navbar}}
 
   <!-- Page Content -->
-  <div class="container" style="text-align: center; position: relative;" id="container">
+  <div class="container" style="text-align: center; position: relative; margin: 0 auto;" id="container">
     <div class="form-group">
-      <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">
+      <div class="input-group col-md-7" style="padding: 0 5px 0 5px;">
         <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{username}}! What shall we eat today?" style="text-align: center;"/>
         <div class="input-group-btn" role="group">
           <button style="background: #fff; border: none; text-shadow: none; padding: none;">
@@ -43,11 +43,11 @@
       </div>
     </div>
     <hr>
-    <div class="row" style="height: 480px; width: 100%; margin: auto; padding: 0 20px 0 20px; text-align: center;" >
-      <div class="col-md-12 portfolio-item" id="map-container" style="height: 480px; width: 100%; margin: auto; padding: 0 20px 0 20px; "></div>
+    <div class="row" style="height: 350px; width: 100%; margin: auto; padding: 0 5px 0 5px; text-align: center;" >
+      <div class="col-md-12 portfolio-item" id="map-container" style="height: 350px; width: 100%; margin: auto; padding: 0 5px 0 5px; "></div>
     </div>
     <hr>
-    <div class="row" style="text-align: center; width: 100%; margin: auto;">
+    <div class="row" style="text-align: center; width: 100%; margin: auto; padding: 0 5px 0 5px;">
       {{#each data.fooditems}}
       <div class="col-md-3 portfolio-item" id="{{id}}" style="text-align: center;">
           <table>
@@ -66,7 +66,8 @@
                 <b>{{price}}</b>, <b>{{rating}}</b>/5.0
                 <br>
                 {{description}}
-                <b>There are : {{count}} : items left</b>
+                <br>
+                <b>There are {{count}} items left</b>
                 <br>
                 <table align="center">
                   <thead>
@@ -95,8 +96,9 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map-container'), {
           center: {lat: 32.878484, lng: -117.213509},
-          zoom: 13
+          zoom: 14
         });
+
         var lat_lng1 = {lat: 32.878484, lng: -117.213509};
         var lat_lng2 = {lat: 32.877946, lng: -117.23287};
         var lat_lng3 = {lat: 32.870494, lng: -117.238939};
@@ -106,6 +108,57 @@
         var lat_lng7 = {lat: 32.878484, lng: -117.213509};
         var lat_lng8 = {lat: 32.869569, lng: -117.231897};
         var lat_lng9 = {lat: 32.884414, lng: -117.211912};
+
+        var infowindows = [
+        	new google.maps.InfoWindow({
+        		content: "Home-cooked Japanese with Kimchi"
+        	}),
+        	new google.maps.InfoWindow({
+        		content: "Salmon and Cole Slaw"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Grilled salmon with grapefruit cole slaw"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Jordan's pulled pork lettuce wrap with secret sauce"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Train wreck of diced vegetable and strange egg like liquid"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Home-cooked Japanese style meal"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Train wreck of diced vegetable and strange egg like liquid"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Dried vegetable and nut curry"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Luke's sausage taco with cream sauce"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Dried vegetable and nut curry"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Garden salad with oriental dressing and grilled salmon"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Craft steak burger, a nice companion for a San Diegan brewary IPA"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Jasmine's craft steak burger"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Home-cooked Chicken curry with nan bread"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Kimberly's Irish smoked salmon canapes"
+        	}),
+         	new google.maps.InfoWindow({
+        		content: "Open sandwich with goat cheese, chery tomatoes, spinach, and salami"
+        	}),
+        ];
 
         var marker1 = new google.maps.Marker({
           position: lat_lng1,
@@ -143,6 +196,34 @@
           position: lat_lng9,
           map: map,
         });
+        marker1.addListener('click', function() {
+        	infowindows[0].open(map, marker1);
+        });
+        marker2.addListener('click', function() {
+        	infowindows[1].open(map, marker2);
+        });
+        marker3.addListener('click', function() {
+        	infowindows[2].open(map, marker3);
+        });
+        marker4.addListener('click', function() {
+        	infowindows[3].open(map, marker4);
+        });
+        marker5.addListener('click', function() {
+        	infowindows[4].open(map, marker5);
+        });
+        marker6.addListener('click', function() {
+        	infowindows[5].open(map, marker6);
+        });
+        marker7.addListener('click', function() {
+        	infowindows[6].open(map, marker7);
+        });
+        marker8.addListener('click', function() {
+        	infowindows[7].open(map, marker8);
+        });
+        marker9.addListener('click', function() {
+        	infowindows[8].open(map, marker9);
+        });
+
       }
     </script>
     <!-- Google Map -->
