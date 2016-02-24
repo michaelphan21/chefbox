@@ -27,7 +27,13 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food1.jpg"			
+			"imageURL": "images/food1.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00"
+			]
 		},
 		{
 			"id": "aZ3521jXxasdfx2pupukw",
@@ -56,7 +62,13 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food2.jpg"			
+			"imageURL": "images/food2.jpg",
+			"available-time": [
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00"
+			]			
 		},
 		{
 			"id": "aZ352djjxkdfkw2234kl",
@@ -85,7 +97,13 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food3.jpg"			
+			"imageURL": "images/food3.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]			
 		},
 		{
 			"id": "aZ3521jdkvsldfkwdsfdh",
@@ -121,7 +139,13 @@
 
 			  }
 			],
-			"imageURL": "images/food4.jpg"			
+			"imageURL": "images/food4.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]				
 		},
 		{
 			"id": "aZ3521jXx1234985dfkw",
@@ -150,7 +174,13 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food5.jpg"
+			"imageURL": "images/food5.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]	
 		},
 		{
 			"id": "aZ3sxxslkd21jXxasdfkw",
@@ -209,7 +239,12 @@
 				"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food6.jpg"
+			"imageURL": "images/food6.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]	
 		},
 		{
 			"id": "aZ3sxx2236d21jXxasdfkw",
@@ -238,7 +273,15 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food7.jpg"
+			"imageURL": "images/food7.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]	
 		},
 		{
 			"id": "aZ3sxx223xxZZswqasdfkw",
@@ -267,7 +310,14 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food10.jpg"
+			"imageURL": "images/food10.jpg",
+			"available-time": [
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 16:00 ~ 17:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00"
+			]	
 		},
 		{
 			"id": "aZ3sTR2235Yadq5QAAdfkw",
@@ -296,7 +346,14 @@
 					"review": "Proin sit amet ipsum finibus, eleifend purus sit amet, elementum augue. Proin non pulvinar nisi, nec aliquet enim. Fusce non diam ac orci efficitur fringilla tristique nec ex. Donec venenatis dictum nisi eu interdum. Maecenas elementum semper ante eget cursus. Sed a fringilla quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc molestie elit eu est ullamcorper aliquam. Aenean tincidunt dolor sit amet ultricies semper."
 				}
 			],
-			"imageURL": "images/food11.jpg"
+			"imageURL": "images/food11.jpg",
+			"available-time": [
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 16:00 ~ 17:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]		
 		},
 		{
 			"id": "aZ3sxQW6W890jXxasdXXfkw",
@@ -331,7 +388,17 @@
 				    "review": "definetly some of the best curry I've had in a long time. The creaminess of the curry was very apparent and the chicken tasted fresh "
 			    }
 			],
-			"imageURL": "images/bg04.jpg"
+			"imageURL": "images/bg04.jpg",
+			"available-time": [
+				"Mon, Feb. 29th 11:00 ~ 12:30",
+				"Tue, Mar. 1st 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 12:00 ~ 13:00",
+				"Wed, Mar. 2nd 16:00 ~ 17:00",
+				"Thu, Mar. 3rd 12:00 ~ 13:00",
+				"Fri, Mar. 4th 15:00 ~ 17:00",
+				"Sat, Mar. 5th 11:00 ~ 14:00",
+				"Sun, Mar. 6th 14:00 ~ 16:00"
+			]		
 		},
 		{
 			"id": "aZ3sx3p5RRBZdQQ3asdXXfkw",
@@ -366,7 +433,15 @@
 				"review": "For freebies they were adequate but these are typically sold for $1.95 a piece at Kimberly's store. I can't find myself willing to pay more than .50 for them. I mean what kind of incompetent bozo can't put some cream cheese and salmon on a biscuit?"
 			  }
 			],
-			"imageURL": "images/bg02.jpg"
+			"imageURL": "images/bg02.jpg",
+			"available-time": [
+				"Mon, Feb. 29th 11:00 ~ 12:30",
+				"Tue, March 1st 12:00 ~ 13:00",
+				"Wed, March 2nd 16:00 ~ 17:00",
+				"Thu, March 3rd 12:00 ~ 13:00",
+				"Fri, March 4th 15:00 ~ 17:00",
+				"Sat, March 5th 11:00 ~ 14:00"
+			]	
 		},
 		{
 			"id": "aZ3sx3p5yPPZNMBD3asdXfkw",
@@ -395,7 +470,14 @@
 					"review": "It's like a subtle yet explosive feeling in your mouth. I need to find where these cherry tomatoes are from"
 				}
 			],
-			"imageURL": "images/bg01.jpg"
+			"imageURL": "images/bg01.jpg",
+			"available-time": [
+				"Mon, Feb. 29th 11:00 ~ 12:30",
+				"Tue, March 1st 12:00 ~ 13:00",
+				"Thu, March 3rd 12:00 ~ 13:00",
+				"Sat, March 5th 11:00 ~ 14:00",
+				"Sun, March 6th 14:00 ~ 16:00"
+			]
 		}
 	]
 }

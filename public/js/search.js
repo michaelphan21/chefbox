@@ -22,16 +22,14 @@ function initializePage() {
 		});
 	});
 
-	$('.btn-primary-order').click(function() {
-		console.log('.btn-primary-order clicked');
-	});
-
 	$('.btn-default-select').click(function() {
-		console.log('.btn-default-select clicked');
+		console.log('time schedule select btn clicked');
+		var time_text = $(this).closest('.td').css("font-weight", "Bold");
 	});
 
-	$('#checkout-btn').click(function() {
+	$('#confirm-btn').click(function() {
 		console.log('#checkout-btn clicked');
+		alert("Great! Your order has been successfully placed and we will inform you on the day you pick it up.")
 	});
 
 	$('#message-btn').click(function() {
