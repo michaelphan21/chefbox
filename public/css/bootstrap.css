@@ -6196,17 +6196,18 @@ button.close {
   }
 }
 .modal-order-view-open {
-  overflow: visible;
+  overflow: auto;
 }
 .modal-order-view {
-  position: fixed;
+  position: absolute;
+  height: 600px;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1050;
   display: none;
-  overflow: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }

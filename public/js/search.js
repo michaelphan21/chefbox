@@ -33,9 +33,11 @@ function initializePage() {
 	$('#checkout-btn').click(function() {
 		console.log('#checkout-btn clicked');
 	});
-	
+
 	$('#message-btn').click(function() {
 		console.log('#message-btn clicked');
+		var foodID = $(this).closest('.col-md-3.portfolio-item').attr('id');
+		document.location.href = "message?chef-username=" + foodID;
 	});
 	
 	/*
