@@ -74,13 +74,12 @@
                   </thead>
                   <tbody>
                     <td>
-                      <br><button type="button" class="btn btn-default">view</button>
+                      <br><button id="viewbtn{{@index}}" class="btn btn-default-order">view</button>
                     </td>
                     <td>&nbsp;&nbsp;</td>
                     <td>
-                        <form id="ordering" method="get" action="/decCounter">
-                      <br><button type="button" class="btn btn-primary">order now</button>
-                        </form>
+                      <br>
+                      {{> orderview this}}
                     </td>                      
                   </tbody>
                 </table>
@@ -159,9 +158,10 @@
   {{> footer}}
 
   <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <!-- Necessary for the Bootstrap modal view -->
+  <script src="js/bootstrap.min.js"></script> 
   <script src="js/search.js"></script>
-  <script src="../js/map/googleMapSearch.js"></script>
+  <script src="js/map/googleMapSearch.js"></script>
 
 
   <!-- custom -->
