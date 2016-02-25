@@ -1,5 +1,7 @@
 'use strict';
 
+var available_time_confirm = '';
+
 $(document).ready(function() {
 	console.log("$(document).read()");
 	initializePage();
@@ -29,13 +31,19 @@ function initializePage() {
 		for (var i = 0; i < len; ++i) {
 			available_times_table_body.children(':nth-child('+i+')').children(':first-child').css("font-weight", "normal");
 		}
-		var available_tim = $(this).parent().parent().children(':first-child').css("font-weight", "Bold");
+		var available_time = $(this).parent().parent().children(':first-child');
+		available_time.css("font-weight", "Bold");
+		available_time_confirm = available_time.text();
 	});
 
 	$('#confirm-btn').click(function() {
 		console.log('#checkout-btn clicked');
-		alert("Great! Your order has been successfully placed and we will inform you on the day you pick it up.")
-		document.location.href = "/search";
+		if (available_time_confirm == '') {
+			alert("Please select a time that you'd like to pick up the food");
+		} else {
+			alert("Great! Your order has been successfully placed for"+available_time_confirm+"and we will inform you on the day you pick it up.")
+			document.location.href = "/search";
+		}
 	});
 
 	$('#message-btn').click(function() {
