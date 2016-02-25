@@ -10,10 +10,9 @@ var handlebars = require('express-handlebars');
 /* Custom Routes */
 var main = require('./routes/main');
 var search = require('./routes/search');
-var signup = require('./routes/signup');
 var signupdata = require('./routes/signupdata');
 var foodinfo = require('./routes/foodinfo');
-var login = require('./routes/login');
+var signuplogin = require('./routes/signup-login');
 var help = require('./routes/help');
 var discover = require('./routes/discover');
 var howitworks = require('./routes/howitworks');
@@ -42,8 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* Views */
 app.use('/', main);
 app.use('/search', search);
-app.use('/signup', signup);
-app.use('/login', login);
+app.use('/signup-login', signuplogin);
 app.use('/help', help);
 app.use('/discover', discover);
 app.use('/howitworks', howitworks);

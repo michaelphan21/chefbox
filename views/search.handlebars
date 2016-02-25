@@ -29,9 +29,9 @@
   {{> navbar}}
 
   <!-- Page Content -->
-  <div class="container" style="text-align: center; position: relative; margin: 0 auto;" id="container">
+  <div class="container" style="text-align: center; position: relative; padding: none;" id="container">
     <div class="form-group">
-      <div class="input-group col-md-7" style="padding: 0 5px 0 5px;">
+      <div class="input-group col-md-7">
         <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{username}}! What shall we eat today?" style="text-align: center;"/>
         <div class="input-group-btn" role="group">
           <button style="background: #fff; border: none; text-shadow: none; padding: none;">
@@ -43,12 +43,9 @@
       </div>
     </div>
     <hr>
-    <div class="row" style="height: 350px; width: 100%; margin: auto; padding: 0 5px 0 5px; text-align: center;" >
-      <div class="col-md-12 portfolio-item" id="map-container" style="height: 350px; width: 100%; margin: auto; padding: 0 5px 0 5px; "></div>
-    </div>
+    <div class="col-md-12 portfolio-item" id="map-container" style="height: 350px;"></div>
     <hr>
-    <div class="row" style="text-align: center; width: 100%; margin: auto; padding: 0 5px 0 5px;">
-      {{#each data.fooditems}}
+    {{#each data.fooditems}}
       <div class="col-md-3 portfolio-item" id="{{id}}" style="text-align: center;">
           <table>
           <thead>
@@ -89,8 +86,7 @@
         </table>
       </div>
       <hr>
-      {{/each}}
-    </div>
+    {{/each}}
     <script>
       var map;
       function initMap() {
@@ -228,11 +224,9 @@
     </script>
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=initMap" async defer></script>
-    <div class="row">
       <div class="col-md-12 portfolio-item">
         <button type="button" class="btn btn-primary" id="moreBtn">&nbsp;&nbsp;&nbsp;<b>more</b>&nbsp;&nbsp;&nbsp;</button>
       </div>
-    </div>
   </div>
 
   {{> footer}}

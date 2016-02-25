@@ -1,6 +1,3 @@
-/* This is a sign up controller for 
- * the previous version of the sign up view
- */
 var SignupModalController = {
   signupInputUsernameElementName: "#signup-username",
   singupInputPasswordElementName: "#signup-password",
@@ -72,7 +69,7 @@ var SignupModalController = {
   },
 */
 
-  addClickEvents: function () {
+  addClickEvents: function (getGlobal) {
     var base = this;
 /*
     base.hidePassword.on("click", function (e) {
@@ -113,6 +110,8 @@ var SignupModalController = {
     });
     */
     base.signupBtn.on("click", function(e) {
+      e.preventDefault();
+
       if (base.signupInputUsername.val().length == 0 || 
           base.signupInputPassword.val().length == 0 ||
           base.signupInputConfirmPassword.val().length == 0 ||
@@ -126,44 +125,68 @@ var SignupModalController = {
         } else if (base.signupInputEmail.val().indexOf('@') < 0) {
           alert("Please input a valid email address");
         } else {
-          // register the user
-          var user = {};
-          user["password"] = base.signupInputPassword.val();
-          user["username"] = base.signupInputUsername.val();
-          user["email"] = base.signupInputEmail.val();
-
-          console.log("user.password:"+user["password"]);
-          console.log("initializePage()");
-
-          var reg_data_url = "/signupdata?username="
-                            +user["username"]
-                            +"&password="
-                            +user["password"]
-                            +"&email="
-                            +user["email"];
-          alert("Signed up successfully. Welcome "+user["username"]+"!");
-          $.get(reg_data_url, function(data) {
-            // returning an email address
-            document.location.href = "/search?username="+data.username+"&email="+data.email;
-          });
+          // register the user --- currently simply overwriting if there are conflicts
+          var password = base.signupInputPassword.val();
+          var username = base.signupInputUsername.val();
+          var email = base.signupInputEmail.val();
+          getGlobal[username] = password;
+          alert("Signed up successfully. Welcome "+username+"!");
+          document.location.href = "/search?username="+username;
         }
       }
     });
 
     base.loginBtn.on("click", function(e) {
-
+      // This version only works for prolonged sessions
+      e.preventDefault();
+      var username = base.loginInputUsername.val();
+      var password = base.loginInputPassword.val();
+      if (username.length == 0 ||
+          password.length == 0) {
+        alert("Please type in correct username and password");
+      } else {
+        if (!getGlobal[username]) {
+          alert("Username or email address does not exist");
+        } else if (password != getGlobal[username]) {
+          alert("Please type in the correct password");
+        } else {
+          // query the database for the correct username
+          document.location.href = "/search?username="+username;
+        }
+      }
     });
 
     return base;
   },
 
-  initialize: function () {
+  initialize: function (getGlobal) {
     var base = this;
-
-    base.findElements().addClickEvents();
+    base.findElements().addClickEvents(getGlobal);
   }
 };
 
+var SignupModalController = SignupModalController || {};
+
+var is_loaded = function(namespace, jsfile) {
+  var is_first = namespace.first_loaded === undefined;
+  namespace.first_loaded = false;
+
+  if (!is_first) {
+    console.log("Warning: Javascript file is included twice:" + jsfile);
+  }
+
+  return is_first;
+};
+
+function getGlobal(){
+  return (function(){
+    return this;
+    }).call(null);
+}
+
 $(document).ready(function () {
-    SignupModalController.initialize();
+  if (!is_loaded(SignupModalController, "signup-login.js")) {
+    return ;
+  }
+  SignupModalController.initialize(getGlobal());
 });

@@ -41,7 +41,7 @@ function initializePage() {
 		if (available_time_confirm == '') {
 			alert("Please select a time that you'd like to pick up the food");
 		} else {
-			alert("Great! Your order has been successfully placed for"+available_time_confirm+"and we will inform you on the day you pick it up.")
+			alert("Great! Your order has been successfully placed for "+available_time_confirm+" and we will inform you on the day you pick it up.")
 			document.location.href = "/search";
 		}
 	});
