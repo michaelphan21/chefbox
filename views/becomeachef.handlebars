@@ -28,24 +28,42 @@
   {{> navbar}}
 
   <form action="success">
-  <p>Do you have a rating of 4.0 or higher?<p>
+  <!--<p>Do you have a rating of 4.0 or higher?<p>
   <select>
     <option value="blank"> </option>
     <option value="yes">Yes</option>
     <option value="no">No</option>
-  </select>
+  </select>-->
+      <p>Do you have a cooking license you can present to chefbox?</p>
+      <select>
+          <option value="blank"> </option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+      </select>
 
-  <p>Do you have at least 100 reviews?<p>
+  <!--<p>Do you have at least 100 reviews?<p>
   <select>
   <option value="blank"> </option>
     <option value="yes">Yes</option>
     <option value="no">No</option>
-  </select>
+  </select>-->
+      <p>How many reviews do you have</p>
+      <select>
+          <option value="blank"> </option>
+          <option value="20+">More than 20</option>
+          <option value="50+">More than 50</option>
+          <option value="80+">More than 80</option>
+          <option value="100+">More than 100</option>
+      </select>
+      <p>if you'd like to specify annother value, you can put in a custom value</p>
+      <input type="text" id="custom-review">
 
   <p>Leave a comment below explaining why you deserve to be promoted to chef standing: <p>
    <textarea id = "myTextArea"rows = "8" cols = "80" required> </textarea>
   <br>
-  <br>
+      <a href="#">Upload lisence</a>
+      <br>
+      <br>
   <input type = "submit" value="Submit">
   </form>
   {{> footer}}

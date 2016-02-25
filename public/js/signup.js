@@ -113,7 +113,7 @@ var SignupModalController = {
     });
     */
     base.signupBtn.on("click", function(e) {
-      if (base.signupInputUsername.val().length == 0 || 
+      if (base.signupInputUsername.val().length == 0 ||
           base.signupInputPassword.val().length == 0 ||
           base.signupInputConfirmPassword.val().length == 0 ||
           base.signupInputEmail.val().length == 0) {
@@ -141,6 +141,8 @@ var SignupModalController = {
                             +user["password"]
                             +"&email="
                             +user["email"];
+
+           alert("By signing up you agree to the terms including but not limited to blahblahblah");
           alert("Signed up successfully. Welcome "+user["username"]+"!");
           $.get(reg_data_url, function(data) {
             // returning an email address
