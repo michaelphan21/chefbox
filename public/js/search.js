@@ -18,24 +18,30 @@ function initializePage() {
 		console.log("foodID:" + foodID);
 		var foodInfoURL = "/searchID?id=" + foodID;
 		$.get(foodInfoURL, function(data) {
-			document.location.href = "foodinfo?idx=" + data;
+			document.location.href = "/foodinfo?idx=" + data;
 		});
 	});
 
 	$('.btn-default-select').click(function() {
 		console.log('time schedule select btn clicked');
-		var time_text = $(this).closest('.td').css("font-weight", "Bold");
+		var available_times_table_body = $(this).parent().parent().parent();
+		var len = available_times_table_body.children().length;
+		for (var i = 0; i < len; ++i) {
+			available_times_table_body.children(':nth-child('+i+')').children(':first-child').css("font-weight", "normal");
+		}
+		var available_tim = $(this).parent().parent().children(':first-child').css("font-weight", "Bold");
 	});
 
 	$('#confirm-btn').click(function() {
 		console.log('#checkout-btn clicked');
 		alert("Great! Your order has been successfully placed and we will inform you on the day you pick it up.")
+		document.location.href = "/search";
 	});
 
 	$('#message-btn').click(function() {
 		console.log('#message-btn clicked');
 		var foodID = $(this).closest('.col-md-3.portfolio-item').attr('id');
-		document.location.href = "message?chef-username=" + foodID;
+		document.location.href = "/message?chef-username=" + foodID;
 	});
 	
 	/*
