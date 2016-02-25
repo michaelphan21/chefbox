@@ -8,7 +8,7 @@ $(document).ready(function() {
 function initializePage() {
 	console.log("initializePage()");
 
-	$('button').click(function() {
+	$('.image button').click(function() {
 		var foodID = $(this).closest('.wrapper').attr('id');
 		console.log("foodID:" + foodID);
 		var foodInfoURL = "/searchID?id=" + foodID;
