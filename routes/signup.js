@@ -9,7 +9,7 @@ var http = require('http').Server(app);
 
 
 router.get('/', function(req, res) {
-    res.render('signup2');
+    res.render('signup');
 })
 
 
