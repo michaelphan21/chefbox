@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Chefbox</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet" />
+    <link href="css/main.css" />
+    <link href="css/signup.css" rel = "stylesheet" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  {{> navbar2}}
+
+  <!--<div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" placeholder="username" id="login-username"/>
+        <input type="password" placeholder="password" id="login-password"/>
+        <button id="btn-login">login</button>
+        <p class="message">Not registered?<a href="#">&nbsp;&nbsp;Create an account</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="help">Help</a></p>
+        <p class="message"></p>
+      </form>
+      <form class="register-form">
+        <input type="text" placeholder="name" id="signup-username"/>
+        <input type="password" placeholder="password" id="signup-password"/>
+        <input type="password" placeholder="confirm password" id="signup-confirm-password"/>
+        <input type="text" placeholder="email address" id="signup-email"/>
+        <button id="btn-signup">sign up</button>
+        <p class="message">Already registered?<a href="#">&nbsp;&nbsp;&nbsp;Sign In</a></p>
+        <p class="help"><a href="howitworks">Find how it works</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="help">Help</a></p>
+      </form>
+    </div>
+  </div>-->
+  <div class="login-page">
+      <div class="form">
+          <form class="login-form">
+              <input type="text" placeholder="username" id="login-username"/>
+              <input type="password" placeholder="password" id="login-password"/>
+              <button id="btn-login">login</button>
+              <p class="message">Not registered?<a href="#">&nbsp;&nbsp;Create an account</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="help">Help</a></p>
+              <p class="message"></p>
+          </form>
+          <form class="register-form">
+              <input type="text" placeholder="firstname" id="signup-username"/><label>*</label>
+              <input type="text" placeholder="lastname" id="signup-username"/><label>*</label>
+              <input type="password" placeholder="password" id="signup-password"/><label>*</label>
+              <!-- <p class="label">password should be more than 8 characters in length</p> -->
+              <input type="password" placeholder="confirm password" id="signup-confirm-password"/><label>*</label>
+              <input type="text" placeholder="email address" id="signup-email"/><label>*</label>
+              <button id="btn-signup">sign up</button>
+              <p class="message">Already registered?<a href="login">&nbsp;&nbsp;&nbsp;Sign In</a></p>
+              <p class="help"><a href="howitworks">Find how it works</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="help">Help</a></p>
+          </form>
+      </div>
+  </div>
+  {{> footer}}
+
+  <!-- jQuery -->
+ <!-- <script src="js/jquery.js"></script> -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="js/signup.js"></script>
+
+
+  <script>
+    $('.message a').click(function(){
+      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+  </script>
+  </body>
+</html>
