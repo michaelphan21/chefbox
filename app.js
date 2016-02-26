@@ -8,7 +8,7 @@ var monk = require('monk');
 var handlebars = require('express-handlebars');
 
 /* Custom Routes */
-var main = require('./routes/main');
+/*var main = require('./routes/main');
 var search = require('./routes/search');
 var signup = require('./routes/signup');
 var signupdata = require('./routes/signupdata');
@@ -21,8 +21,22 @@ var becomeachef = require('./routes/becomeachef');
 var searchdata = require('./routes/searchdata');
 var message = require('./routes/message');
 var profile = require('./routes/profile');
-var success = require('./routes/success');
+var success = require('./routes/success');*/
 
+var main2 = require('./routes/new/main2');
+var search2 = require('./routes/new/search2');
+var signup2 = require('./routes/new/signup2');
+var signupdata2 = require('./routes/new/signupdata2');
+var foodinfo2 = require('./routes/new/foodinfo2');
+var login2 = require('./routes/new/login2');
+var help2 = require('./routes/new/help2');
+var discover2 = require('./routes/new/discover2');
+var howitworks2 = require('./routes/new/howitworks2');
+var becomeachef2 = require('./routes/new/becomeachef2');
+var searchdata2 = require('./routes/new/searchdata2');
+var message2 = require('./routes/new/message2');
+var profile2 = require('./routes/new/profile2');
+var success2 = require('./routes/new/success2');
 
 var app = express();
 
@@ -39,8 +53,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 /* Views */
-app.use('/', main);
+/*app.use('/', main);
 app.use('/search', search);
 app.use('/signup', signup);
 app.use('/login', login);
@@ -55,9 +70,30 @@ app.use('/success', success);
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
-app.get('/signupdata', signupdata.sendData);
+app.get('/signupdata', signupdata.sendData);*/
 //app.get('/signup',signup.addMemtoPage);
 //app.get('/decCounter',searchdata.dcrCounter);
+
+
+app.use('/', main2);
+app.use('/search', search2);
+app.use('/signup', signup2);
+app.use('/login', login2);
+app.use('/help', help2);
+app.use('/discover', discover2);
+app.use('/howitworks', howitworks2);
+app.use('/becomeachef', becomeachef2);
+app.use('/foodinfo', foodinfo2);
+app.use('/message', message2);
+app.use('/profile', profile2);
+app.use('/success', success2);
+
+app.get('/searchID', searchdata2.sendIndex);
+app.get('/searchData', searchdata2.sendData);
+app.get('/signupdata', signupdata2.sendData);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
