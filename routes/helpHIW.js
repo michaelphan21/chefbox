@@ -4,7 +4,7 @@ var app = express();
 var http = require('http').Server(app);
 
 router.get('/', function(req, res) {
-  res.render('becomeachef');
+  res.render('helpHIW');
 });
 
 module.exports = router;

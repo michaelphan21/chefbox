@@ -13,14 +13,10 @@ var search = require('./routes/search');
 var signupdata = require('./routes/signupdata');
 var foodinfo = require('./routes/foodinfo');
 var signuplogin = require('./routes/signup-login');
-var help = require('./routes/help');
+var helpHIW = require('./routes/helpHIW');
 var discover = require('./routes/discover');
-var howitworks = require('./routes/howitworks');
-var becomeachef = require('./routes/becomeachef');
 var searchdata = require('./routes/searchdata');
 var message = require('./routes/message');
-var profile = require('./routes/profile');
-var success = require('./routes/success');
 
 
 var app = express();
@@ -42,14 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', main);
 app.use('/search', search);
 app.use('/signup-login', signuplogin);
-app.use('/help', help);
+app.use('/helpHIW', helpHIW);
 app.use('/discover', discover);
-app.use('/howitworks', howitworks);
-app.use('/becomeachef', becomeachef);
 app.use('/foodinfo', foodinfo);
 app.use('/message', message);
-app.use('/profile', profile);
-app.use('/success', success);
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
