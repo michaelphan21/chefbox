@@ -7,23 +7,25 @@
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chefbox</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Hyeonsu Kang">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+  <title>Chefbox</title>
 
-    <!-- Custom CSS -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/form.css">
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/4-col-portfolio.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/booking.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body>
   {{#if login}}
@@ -34,8 +36,82 @@
   
 
   <!-- Page Content -->
-  <div class="container" style="text-align: center; position: relative; padding: none;" id="container">
-    
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+          <h3>Post your food</h3>
+          <form id="bookingForm">
+            <div class="fl1">
+              <div class="tmInput">
+                <input name="Name" placeHolder="Name:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
+              </div>
+              <div class="tmInput">
+                <input name="Country" placeHolder="Country:" type="text" data-constraints="@NotEmpty @Required">
+              </div>
+            </div>
+            <div class="fl1">
+              <div class="tmInput">
+                <input name="Email" placeHolder="Email:" type="text" data-constraints="@NotEmpty @Required @Email">
+              </div>
+              <div class="tmInput mr0">
+                <input name="Hotel" placeHolder="Hotel:" type="text" data-constraints="@NotEmpty @Required">
+              </div>
+            </div>
+            <div class="clear"></div>
+            <strong>Check-in</strong>
+            <label class="tmDatepicker">
+              <input type="text" name="Check-in" placeHolder='10/05/2014' data-constraints="@NotEmpty @Required @Date">
+            </label>
+            <div class="clear"></div>
+            <strong>Check-out</strong>
+            <label class="tmDatepicker">
+              <input type="text" name="Check-out" placeHolder='20/05/2014' data-constraints="@NotEmpty @Required @Date">
+            </label>
+            <div class="clear"></div>
+            <div class="tmRadio">
+              <p>Comfort</p>
+              <input name="Comfort" type="radio" id="tmRadio0" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' checked/>
+              <span>Cheap</span>
+              <input name="Comfort" type="radio" id="tmRadio1" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
+              <span>Standart</span>
+              <input name="Comfort" type="radio" id="tmRadio2" data-constraints='@RadioGroupChecked(name="Comfort", groups=[RadioGroup])' />
+              <span>Lux</span>
+            </div>
+            <div class="clear"></div>
+            <div class="fl1 fl2">
+              <em>Adults</em>
+              <select name="Adults" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+                <option>1</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              <div class="clear"></div>
+              <em>Rooms</em>
+              <select name="Rooms" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+                <option>1</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+            <div class="fl1 fl2">
+              <em>Children</em>
+              <select name="Children" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+                <option>0</option>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+            <div class="clear"></div>
+            <div class="tmTextarea">
+              <textarea name="Message" placeHolder="Message" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
+            </div>
+            <a href="#" class="btn" data-type="submit">Submit</a>
+          </form>
+        </div>
+      </div>
   </div>
 
   {{> footer}}
