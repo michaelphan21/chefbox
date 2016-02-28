@@ -18,6 +18,7 @@ var helpHIW = require('./routes/helpHIW');
 var discover = require('./routes/discover');
 var searchdata = require('./routes/searchdata');
 var message = require('./routes/message');
+var becomeachef = require('./routes/becomeachef');
 
 
 var app = express();
@@ -48,7 +49,7 @@ app.use('/helpHIW', helpHIW);
 app.use('/discover', discover);
 app.use('/foodinfo', foodinfo);
 app.use('/message', message);
-
+app.use('/becomeachef', becomeachef);
 
 
 app.get('/searchID', searchdata.sendIndex);
