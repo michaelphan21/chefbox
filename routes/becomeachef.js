@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 		login: req.session.login,
 		user: req.session.user
 	}
-  res.render('message', userdata);
+  res.render('becomeachef', userdata);
 });
 
 module.exports = router;
