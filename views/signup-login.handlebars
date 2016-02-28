@@ -25,7 +25,11 @@
     <![endif]-->
 </head>
 <body>
-  {{> navbar}}
+  {{#if login}}
+    {{> navbar-loggedin}}
+  {{else}}
+    {{> navbar}}
+  {{/if}}
   {{#if login}}
     {{> login-partial}}
   {{else}}

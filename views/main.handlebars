@@ -17,9 +17,12 @@
 	<body style="padding: 3%;">	
     <p align="right" style="margin: 15% 0;">
       <!-- Navigation -->
-      <button type="button" onclick="learnmore()" class="button" id="learnmore">Learn More!</button>
-      &nbsp;<a href="signup-login?login=false">Sign Up</pre></a>&nbsp;
-      &nbsp;<a href="signup-login?login=true">Log In</a>&nbsp;
+      {{#if login}}
+        {{> main-navbar-loggedin}}
+      {{else}}
+        {{> main-navbar}}
+      {{/if}}
+
     </p>
 		<!-- Header -->
     <header id="header">
@@ -40,7 +43,7 @@
 
           </form>
           <br>
-          <a href="search"><img src="images/magnifying-glass32.png" alt="none"/></a>
+          <a href="search?login=false"><img src="images/magnifying-glass32.png" alt="none"/></a>
         </tr>
         </tbody>
       </table>

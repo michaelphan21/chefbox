@@ -11,6 +11,6 @@ router.sendData = function(req, res) {
 		"email": email,
 	};
 	res.json(data);
-}
+};
 
 module.exports = router;

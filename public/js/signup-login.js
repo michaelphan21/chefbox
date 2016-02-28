@@ -1,10 +1,11 @@
+
 var SignupModalController = {
   signupInputUsernameElementName: "#signup-username",
   singupInputPasswordElementName: "#signup-password",
   signupInputConfirmPasswordElementName: "#signup-confirm-password",
   signupInputEmailElementName: "#signup-email",
 
-  loginInputUsernameElementName: "#login-username",
+  loginInputEmailElementName: "#login-email",
   loginInputPasswordElementName: "#login-password",
 
   signupBtnElementName: "#btn-signup",
@@ -16,7 +17,7 @@ var SignupModalController = {
   signupInputEmail: null,
   signupBtn: null,
 
-  loginInputUsername: null,
+  loginInputEmail: null,
   loginInputPassword: null,
   loginBtn: null,
 
@@ -32,136 +33,117 @@ var SignupModalController = {
     base.signupInputEmail = $(base.signupInputEmailElementName);
     base.signupBtn = $(base.signupBtnElementName);
 
-    base.loginInputUsername = $(base.loginInputUsernameElementName);
+    base.loginInputEmail = $(base.loginInputEmailElementName);
     base.loginInputPassword = $(base.loginInputPasswordElementName);
     base.loginBtn = $(base.loginBtnElementName);
 
     return base;
   },
-/*
-  setState: function (state) {
-    var base = this,
-        elem = null;
 
-    if (!state) {
-        state = 0;
-    }
-
-    if (base.tabsElement) {
-        elem = $(base.tabsElement[state]);
-        elem.addClass("current");
-        $("." + elem.attr("data-tabtar")).addClass("show");
-    }
-
-    return base;
-  },
-
-  getActiveTab: function () {
+  addClickEvents: function (db) {
     var base = this;
 
-    base.tabsElement.each(function (i, el) {
-        if ($(el).hasClass("current")) {
-            base.activeTab = $(el);
-        }
-    });
-
-    return base;
-  },
-*/
-
-  addClickEvents: function (getGlobal) {
-    var base = this;
-/*
-    base.hidePassword.on("click", function (e) {
-        var $this = $(this),
-            $pwInput = $this.prev("input");
-
-        if ($pwInput.attr("type") == "password") {
-            $pwInput.attr("type", "text");
-            $this.text("Hide");
-        } else {
-            $pwInput.attr("type", "password");
-            $this.text("Show");
-        }
-    });
-
-    base.tabsElement.on("click", function (e) {
-        var targetTab = $(this).attr("data-tabtar");
-
-        e.preventDefault();
-        base.activeTab.removeClass("current");
-        base.activeTab = $(this);
-        base.activeTab.addClass("current");
-
-        base.tabElement.each(function (i, el) {
-            el = $(el);
-            el.removeClass("show");
-            if (el.hasClass(targetTab)) {
-                el.addClass("show");
-            }
-        });
-    });
-
-    base.inputElements.find("label").on("click", function (e) {
-        var $this = $(this),
-            $input = $this.next("input");
-
-        $input.focus();
-    });
-    */
     base.signupBtn.on("click", function(e) {
       e.preventDefault();
 
-      if (base.signupInputUsername.val().length == 0 || 
-          base.signupInputPassword.val().length == 0 ||
-          base.signupInputConfirmPassword.val().length == 0 ||
-          base.signupInputEmail.val().length == 0) {
-        alert("Please fill in all the fields");
-      } else {
-        if (base.signupInputPassword.val() != base.signupInputConfirmPassword.val()) {
-          alert("Password does not match the confirm password");
-        } else if (base.signupInputPassword.val().length < 8) {
-          alert("Password should be at least 8 characters long");
-        } else if (base.signupInputEmail.val().indexOf('@') < 0) {
-          alert("Please input a valid email address");
-        } else {
-          // register the user --- currently simply overwriting if there are conflicts
-          var password = base.signupInputPassword.val();
-          var username = base.signupInputUsername.val();
-          var email = base.signupInputEmail.val();
-          getGlobal[username] = password;
-          alert("Signed up successfully. Welcome "+username+"!");
-          document.location.href = "/search?username="+username;
-        }
+      if (base.signupInputUsername.val().length == 0) {
+      	$('#signup-username-status').html('Please choose a username');
+      	$('#signup-username-status').css('color: #ff8d00;'); 
       }
+      if (base.signupInputPassword.val().length == 0) {
+      	$('#signup-password-status').html('Please write a valid password');
+      	$('#signup-password-status').css('color: #ff8d00;'); 
+      }
+      if (base.signupInputConfirmPassword.val().length == 0) {
+      	$('#signup-confirm-password-status').html('Please write a valid password');
+      	$('#signup-confirm-password-status').css('color: #ff8d00;'); 
+      }
+      if (base.signupInputEmail.val().length == 0) {
+      	$('#signup-email-status').html('Please tell us a valid email address');
+      	$('#signup-email-status').css('color: #ff8d00;'); 
+      }      
+
+      if (base.signupInputPassword.val() != base.signupInputConfirmPassword.val()) {
+      	$('#signup-password-status').html('Passwords do not match');
+      	$('#signup-password-status').css('color: #ff8d00;'); 
+      	$('#signup-confirm-password-status').html('Passwords do not match');
+      	$('#signup-confirm-password-status').css('color: #ff8d00;'); 
+      } else if (base.signupInputPassword.val().length < 8) {
+      	$('#signup-password-status').html('Passwords should be at least 8 characters long');
+      	$('#signup-password-status').css('color: #ff8d00;'); 
+      	$('#signup-confirm-password-status').html('Passwords should be at least 8 characters long');
+      	$('#signup-confirm-password-status').css('color: #ff8d00;'); 
+      } 
+
+      if (base.signupInputEmail.val().indexOf('@') < 0) {
+      	$('#signup-email-status').html('Please tell us a valid email address');
+      	$('#signup-email-status').css('color: #ff8d00;'); 
+      } 
+
+      if (base.signupInputUsername.val().length != 0 
+      	&& base.signupInputPassword.val().length != 0
+      	&& base.signupInputConfirmPassword.val().length != 0
+      	&& base.signupInputEmail.val().length != 0
+      	&& base.signupInputPassword.val() == base.signupInputConfirmPassword.val()
+      	&& base.signupInputPassword.val().length >= 8
+      	&& base.signupInputEmail.val().indexOf('@') >= 0) {
+
+        var password = base.signupInputPassword.val();
+        var username = base.signupInputUsername.val();
+        var email = base.signupInputEmail.val();
+        var signupURL = "/signup-login/signup?email="+email+"&password="+password+"&username="+username;
+
+        $.getJSON(signupURL, function(data) {
+          if (data.status == "success") {
+            document.location.href="/search";
+          } else if (data.status == "duplicate") {
+          	$('#signup-email-status').html('* The email address is already registered. To sign in, click the sign in button below');
+          	$('#signup-email-status').css('color: #ff8d00;');
+        	} else {
+          	$('#signup-email-status').html('* Failed to sign up. Please try again in a few moment');
+          	$('#signup-email-status').css('color: #ff8d00;');          		
+          }
+        });
+      }	
     });
 
     base.loginBtn.on("click", function(e) {
-      // This version only works for prolonged sessions
       e.preventDefault();
-      var username = base.loginInputUsername.val();
+
+      var email = base.loginInputEmail.val();
       var password = base.loginInputPassword.val();
-      if (username.length == 0 ||
-          password.length == 0) {
-        alert("Please type in correct username and password");
-      } else {
-        if (!getGlobal[username]) {
-          alert("Username or email address does not exist");
-        } else if (password != getGlobal[username]) {
-          alert("Please type in the correct password");
-        } else {
-          // query the database for the correct username
-          document.location.href = "/search?username="+username;
-        }
+      if (email.length == 0) {
+      	$('#login-email-status').html('Please tell us a valid email address');
+      	$('#login-email-status').css('color: #ff8d00;'); 
+      }
+      if (password.length == 0) {
+      	$('#login-password-status').html('Please write a valid password');
+      	$('#login-password-status').css('color: #ff8d00;'); 
+      }
+      if (email.length != 0	&& password.length != 0) {
+        var loginURL = "/signup-login/login?email="+email+"&password="+password;
+
+        $.getJSON(loginURL, function(data) {
+          if (data.status == "success") {
+            document.location.href="/search?login=true&username="+data.username+"&email="+data.email;
+          } else if (data.status == "user not found") {
+          	$('#login-email-status').html('* The email address does not exist');
+          	$('#login-email-status').css('color: #ff8d00;');
+        	} else if (data.status == "incorrect password") {
+          	$('#login-email-status').html('* The password is incorrect');
+          	$('#login-email-status').css('color: #ff8d00;');          		
+        	} else {
+        	}
+        });
       }
     });
 
     return base;
   },
 
-  initialize: function (getGlobal) {
+  initialize: function () {
     var base = this;
-    base.findElements().addClickEvents(getGlobal);
+    base.findElements().addClickEvents();
   }
 };
 
@@ -178,15 +160,9 @@ var is_loaded = function(namespace, jsfile) {
   return is_first;
 };
 
-function getGlobal(){
-  return (function(){
-    return this;
-    }).call(null);
-}
-
 $(document).ready(function () {
   if (!is_loaded(SignupModalController, "signup-login.js")) {
     return ;
   }
-  SignupModalController.initialize(getGlobal());
+  SignupModalController.initialize();
 });
