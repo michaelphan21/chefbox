@@ -91,12 +91,4 @@ function initializePage() {
 		$('#summary').html(htmlTxt);
 
 	});
-	$('#help7').click(function (e) {
-		e.preventDefault();
-		var htmlTxt = '<h1>Contact Us</h1>'
-		htmlTxt += 'For any further questions you may have, feel free to contact our customer serivce hotline at 1(800)999-9999 or email us at ChefBox@gmail.com! We look forward to hearing what you have to say and we will try to get back to you with a timely response!';
-		htmlTxt += '<br><br>';
-		$('#summary').html(htmlTxt);
-
-	});
 }

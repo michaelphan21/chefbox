@@ -19,6 +19,7 @@ var discover = require('./routes/discover');
 var searchdata = require('./routes/searchdata');
 var message = require('./routes/message');
 var becomeachef = require('./routes/becomeachef');
+var contactus = require('./routes/contactus');
 
 
 var app = express();
@@ -50,6 +51,7 @@ app.use('/discover', discover);
 app.use('/foodinfo', foodinfo);
 app.use('/message', message);
 app.use('/becomeachef', becomeachef);
+app.use('/contactus', contactus);
 
 
 app.get('/searchID', searchdata.sendIndex);
