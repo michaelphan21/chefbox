@@ -8,7 +8,7 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
 	email: {type: String, unique: true},
 	username: String,
-	combined: String,
+	combined: Buffer,
 	roles: Array
 });
 var UserModel = mongoose.model('users', UserSchema);
@@ -37,7 +37,6 @@ router.get('/signup', function(req, res) {
 				// in the session store to be retrieved,
 				// or in this case the entire user object
 				req.session.user = user;
-				req.session.success = 'Authenicated as ' + user.username;
 				req.session.login = true;
 				res.json({ status: "success", username: user.username, email: user.email });
 			});
@@ -113,32 +112,33 @@ router.signup = function(email, password, username, fn) {
 	var mongoose = router.connectToDB(function(err, mongoose) {
 		if (!err) {
 
-			var data = {
-				username: username,
-				email: email.toUpperCase(),
-				combined: undefined,
-				roles: ['normal'],
-			};
-
 			router.hash(password, function(err, combined) {
-				if (err) return fn(err);
-				data.combined = combined.toString();
-			});
 
-			var user = new UserModel(data);
-			user.save(function(err) {
-				if (err) {
-					console.log("Error creating the user: "+err);
-					if (11000 === err.code || 11001 === err.code) {
-						fn(new Error('duplicate'));
+				if (err) return fn(err);
+				//var combined_string = new Buffer(combined, 'binary').toString('hex');
+				var data = {
+					"username": username,
+					"email": email.toUpperCase(),
+					"combined": combined,
+					"roles": ['normal']
+				};
+				var user = new UserModel(data);
+				user.save(function(err) {
+					if (err) {
+						console.log("Error creating the user: "+err);
+						if (11000 === err.code || 11001 === err.code) {
+							fn(new Error('duplicate'));
+						} else {
+							fn(new Error('failure'));
+						}
 					} else {
-						fn(new Error('failure'));
+						console.log("Succeeded in creating the user");
+						fn(null, user);
 					}
-				} else {
-					console.log("Succeeded in creating the user");
-					fn(null, user);
-				}
+				});
 			});
+		} else {
+			fn(err);
 		}
 	});
 };
@@ -161,35 +161,36 @@ router.login = function(password, email, callback) {
 
  	var mongoose = router.connectToDB(function(err, mongoose) {
  		if (!err) {
- 			UserModel.findOne({ email: email }, function(err, user) {
+ 			UserModel.findOne({ "email": email }, function(err, user) {
+
  				if (err) return callback(new Error("mongodb document error"));
  				if (user == null) return callback(new Error("user not found"));
 
- 				router.hash(password, function(err, combined) {
- 					if (err) callback(err);
+ 				var combined = user.combined;
+			  var saltBytes = combined.readUInt32BE(0);
+			  var hashBytes = combined.length - saltBytes - 8;
+			  var iterations = combined.readUInt32BE(4);
+			  var salt = combined.slice(8, saltBytes + 8);
+			  var hash = combined.toString('binary', saltBytes + 8);
 
-				  var saltBytes = combined.readUInt32BE(0);
-				  var hashBytes = combined.length - saltBytes - 8;
-				  var iterations = combined.readUInt32BE(4);
-				  var salt = combined.slice(8, saltBytes + 8);
-				  var hash = combined.toString('binary', saltBytes + 8);
+			  // verify the salt and hash against the password
+			  crypto.pbkdf2(password, salt, iterations, hashBytes, function(err, verify) {
 
-				  // verify the salt and hash against the password
-				  crypto.pbkdf2(password, salt, iterations, hashBytes, function(err, verify) {
-				    if (err) return callback(err);
-				    if (verify.toString('binary') === hash) return callback(null, user);
-				    return fn(new Error('incorrect password')); 
-				  });
- 				});
- 			});
+			    if (err) return callback(err);
+			    if (verify.toString('binary') === hash) return callback(null, user);
+			    return callback(new Error('incorrect password')); 
+			  });
+			});
  		}
  	});
 };
 
 router.get('/login', function(req, res) {
 	console.log('signup-login/login');
-	router.login(req.query.email, req.query.password, function(err, user) {
+
+	router.login(req.query.password, req.query.email.toUpperCase(), function(err, user) {
 		mongoose.connection.close();
+
 		if (!err) {
 			// regenerate session when signing in
 			// to prevent fixation
@@ -203,6 +204,7 @@ router.get('/login', function(req, res) {
 				res.json({ status: "success", username: user.username, email: user.email });
 			});
 		} else {
+			console.log(err.message);
 			req.session.error = err;
 			res.json({ status: err.message });
 		}
