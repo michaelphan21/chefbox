@@ -7,7 +7,8 @@ var http = require('http').Server(app);
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
 	email: {type: String, unique: true},
-	username: String,
+	firstname: String,
+	lastname: String,
 	combined: Buffer,
 	roles: Array
 });
@@ -26,7 +27,7 @@ router.get('/', function(req, res) {
 
 router.get('/signup', function(req, res) {
 	console.log('signup-login/signup');
-	router.signup(req.query.email, req.query.password, req.query.username, function(err, user) {
+	router.signup(req.query.email, req.query.password, req.query.firstname, req.query.lastname, function(err, user) {
 		mongoose.connection.close();
 		if (user) {
 
@@ -38,7 +39,7 @@ router.get('/signup', function(req, res) {
 				// or in this case the entire user object
 				req.session.user = user;
 				req.session.login = true;
-				res.json({ status: "success", username: user.username, email: user.email });
+				res.json({ status: "success" });
 			});
 		} else {
 			req.session.error = err;
@@ -107,7 +108,7 @@ router.hash = function(password, callback) {
   });
 };
 
-router.signup = function(email, password, username, fn) {
+router.signup = function(email, password, firstname, lastname, fn) {
 	console.log('signup()');
 	var mongoose = router.connectToDB(function(err, mongoose) {
 		if (!err) {
@@ -117,7 +118,8 @@ router.signup = function(email, password, username, fn) {
 				if (err) return fn(err);
 				//var combined_string = new Buffer(combined, 'binary').toString('hex');
 				var data = {
-					"username": username,
+					"firstname": firstname,
+					"lastname": lastname,
 					"email": email.toUpperCase(),
 					"combined": combined,
 					"roles": ['normal']
@@ -201,7 +203,7 @@ router.get('/login', function(req, res) {
 				// or in this case the entire user object
 				req.session.user = user;
 				req.session.login = true;
-				res.json({ status: "success", username: user.username, email: user.email });
+				res.json({ status: "success" });
 			});
 		} else {
 			console.log(err.message);
