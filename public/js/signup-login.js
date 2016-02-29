@@ -77,9 +77,17 @@ var SignupModalController = {
     base.signupInputConfirmPasswordStatus.css('color', '#ff8d00'); 
     base.signupInputEmailStatus.css('color', '#ff8d00');
 
+    base.signupInputFirstnameStatus.css('display', 'none');
+    base.signupInputLastnameStatus.css('display', 'none');
+    base.signupInputPasswordStatus.css('display', 'none');
+    base.signupInputConfirmPasswordStatus.css('display', 'none');
+    base.signupInputEmailStatus.css('display', 'none');
 
     base.loginInputEmailStatus.css('color', '#ff8d00');
     base.loginInputPasswordStatus.css('color', '#ff8d00');
+
+    base.loginInputEmailStatus.css('display', 'none');
+    base.loginInputPasswordStatus.css('display', 'none');
 
     return base;
   },
@@ -110,29 +118,41 @@ var SignupModalController = {
       base.signupClear();
 
       if (base.signupInputFirstname.val().length == 0) {
+        base.signupInputFirstnameStatus.css('display', 'visible');
         base.signupInputFirstnameStatus.html('* Please choose a username');
       }
       if (base.signupInputLastname.val().length == 0) {
+        base.signupInputLastnameStatus.css('display', 'visible');
         base.signupInputLastnameStatus.html('* Please choose a username');
       }
       if (base.signupInputPassword.val().length == 0) {
+        base.signupInputPasswordStatus.css('display', 'visible');
         base.signupInputPasswordStatus.html('* Please write a valid password');
       }
       if (base.signupInputConfirmPassword.val().length == 0) {
+        base.signupInputConfirmPasswordStatus.css('display', 'visible');
         base.signupInputConfirmPasswordStatus.html('* Please write a valid password');
       }
       if (base.signupInputEmail.val().length == 0) {
+        base.signupInputEmailStatus.css('display', 'visible');
         base.signupInputEmailStatus.html('* Please tell us a valid email address');
       }
       if (base.signupInputPassword.val() != base.signupInputConfirmPassword.val()) {
+        base.signupInputPasswordStatus.css('display', 'visible');
+        base.signupInputConfirmPasswordStatus.css('display', 'visible');
+
         base.signupInputPasswordStatus.html('* Passwords do not match');
         base.signupInputConfirmPasswordStatus.html('* Passwords do not match');
       } else if (base.signupInputPassword.val().length < 8) {
+        base.signupInputPasswordStatus.css('display', 'visible');
+        base.signupInputConfirmPasswordStatus.css('display', 'visible');
+
         base.signupInputPasswordStatus.html('* Passwords should be at least 8 characters long');
         base.signupInputConfirmPasswordStatus.html('* Passwords should be at least 8 characters long');
       } 
 
       if (base.signupInputEmail.val().indexOf('@') < 0) {
+        base.signupInputEmailStatus.css('display', 'visible');
         base.signupInputEmailStatus.html('* Please tell us a valid email address');
       } 
 
@@ -155,8 +175,10 @@ var SignupModalController = {
           if (data.status == "success") {
             document.location.href="/search";
           } else if (data.status == "duplicate") {
+            base.signupInputEmailStatus.css('display', 'visible');
             base.signupInputEmailStatus.html('* The email address is already registered. To sign in, click the sign in button below');
           } else {
+            base.signupInputEmailStatus.css('display', 'visible');
             base.signupInputEmailStatus.html('* Failed to sign up. Please try again in a few moment');
           }
         });
@@ -171,9 +193,11 @@ var SignupModalController = {
       var email = base.loginInputEmail.val();
       var password = base.loginInputPassword.val();
       if (email.length == 0) {
+        base.loginInputEmailStatus.css('display', 'visible');
         base.loginInputEmailStatus.html('* Please tell us a valid email address');
       }
       if (password.length < 8) {
+        base.loginInputPasswordStatus.css('display', 'visible');
         base.loginInputPasswordStatus.html('* Please write a valid password');
       }
       if (email.length != 0 && password.length >= 0) {
@@ -183,8 +207,10 @@ var SignupModalController = {
           if (data.status == "success") {
             document.location.href="/search";
           } else if (data.status == "user not found") {
+            base.loginInputEmailStatus.css('display', 'visible');
             base.loginInputEmailStatus.html('* The email address does not exist');
           } else if (data.status == "incorrect password") {
+            base.loginInputEmailStatus.css('display', 'visible');
             base.loginInputEmailStatus.html('* The password is incorrect');
           } else {
           }
