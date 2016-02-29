@@ -14,9 +14,8 @@
 
   <title>Chefbox</title>
 
-  <link rel="stylesheet" href="css/form.css">
   <link href="css/bootstrap.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="css/form.css">
 
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script> 
@@ -37,16 +36,15 @@
 
   <!-- Page Content -->
   <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12">
-        <h3>Hi {{user.firstname}}, post your food to the world!</h3>
+    <div class="col-m2-6">
+        <h3>Hi {{user.firstname}}, show your food to people!</h3>
         <form id="form">
           <div class="success_wrapper">
             <div class="success-message">Contact form submitted</div>
           </div>
           <strong>Name of food</strong>
           <label class="name">
-            <input type="text" placeholder="Name of food:" data-constraints="@Required @JustLetters" />
+            <input type="text" placeholder="Name of food" data-constraints="@Required @JustLetters" />
             <span class="empty-message">*This field is required.</span>
             <span class="error-message">*This is not a valid name.</span>
           </label>
@@ -73,7 +71,6 @@
             &nbsp;&nbsp;<button data-type="submit" class="btn btn-primary"><strong>Post</strong></button>
           </div>
         </form>
-      </div>
     </div>
   </div>
 
