@@ -161,8 +161,9 @@ router.login = function(password, email, callback) {
 
  	var mongoose = router.connectToDB(function(err, mongoose) {
  		if (!err) {
- 			UserModel.find({ email: email }, function(err, user) {
- 				if (err) return callback(new Error("user not found"));
+ 			UserModel.findOne({ email: email }, function(err, user) {
+ 				if (err) return callback(new Error("mongodb document error"));
+ 				if (user == null) return callback(new Error("user not found"));
 
  				router.hash(password, function(err, combined) {
  					if (err) callback(err);
@@ -189,7 +190,7 @@ router.get('/login', function(req, res) {
 	console.log('signup-login/login');
 	router.login(req.query.email, req.query.password, function(err, user) {
 		mongoose.connection.close();
-		if (user) {
+		if (!err) {
 			// regenerate session when signing in
 			// to prevent fixation
 
