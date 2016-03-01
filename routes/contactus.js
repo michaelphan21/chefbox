@@ -4,7 +4,11 @@ var app = express();
 var http = require('http').Server(app);
 
 router.get('/', function(req, res) {
-  res.render('help');
+	var userdata = {
+		user: req.session.user,
+		login: req.session.login
+	};
+  res.render('contactus', userdata);
 });
 
 module.exports = router;

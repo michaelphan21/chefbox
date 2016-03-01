@@ -26,13 +26,17 @@
     <![endif]-->
 </head>
 <body>
-  {{> navbar}}
+  {{#if login}}
+    {{> navbar-loggedin}}
+  {{else}}
+    {{> navbar}}
+  {{/if}}
 
   <!-- Page Content -->
   <div class="container" style="text-align: center; position: relative; padding: none;" id="container">
     <div class="form-group">
       <div class="input-group col-md-7">
-        <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{username}}! What shall we eat today?" style="text-align: center;"/>
+        <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{user.firstname}}! What shall we eat today?" style="text-align: center;"/>
         <div class="input-group-btn" role="group">
           <button style="background: #fff; border: none; text-shadow: none; padding: none;">
             <span>
@@ -47,7 +51,7 @@
     <hr>
     {{#each data.fooditems}}
       <div class="col-md-3 portfolio-item" id="{{id}}" style="text-align: center;">
-          <table>
+        <table>
           <thead>
           </thead>
           <tbody>

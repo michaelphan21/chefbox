@@ -1,20 +1,28 @@
    <div class="login-page">
     <div class="form">
       <form class="login-form">
-        <input type="text" placeholder="Email or username" id="login-username"/>
+        <input type="text" placeholder="email" id="login-email"/>
+        <p class="message" id="login-email-status"></p>
         <input type="password" placeholder="password" id="login-password"/>
+        <p class="message" id="login-password-status"></p>
         <button id="btn-login">login</button>
-        <p class="message">Not registered?<a href="#">&nbsp;&nbsp;Create an account</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="help">Help</a></p>
+        <p class="message">Not registered?<a href="#">&nbsp;&nbsp;Create an account</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="helpHIW">Help</a></p>
+        <p id="status" style="text-align: center; color:#FF69B4"></p>
         <p class="message"></p>
       </form>
       <form class="register-form" style="display: none;">
-        <input type="text" placeholder="username" id="signup-username"/>
-        <input type="password" placeholder="password" id="signup-password"/>
-        <input type="password" placeholder="confirm password" id="signup-confirm-password"/>
         <input type="text" placeholder="email address" id="signup-email"/>
+        <p class="message" id="signup-email-status"></p>
+        <input type="text" placeholder="first name" id="signup-firstname"/>
+        <p class="message" id="signup-firstname-status"></p>
+        <input type="text" placeholder="last name" id="signup-lastname"/>
+        <p class="message" id="signup-lastname-status"></p>
+        <input type="password" placeholder="password" id="signup-password"/>
+        <p class="message" id="signup-password-status"></p>
+        <input type="password" placeholder="confirm password" id="signup-confirm-password"/>
+        <p class="message" id="signup-confirm-password-status"></p>
         <button id="btn-signup">sign up</button>
         <p class="message">Already registered?<a href="#">&nbsp;&nbsp;&nbsp;Sign In</a></p>
-        <p class="message"><a href="howitworks">Find how it works</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="help">Help</a></p>
       </form>
     </div>
   </div>

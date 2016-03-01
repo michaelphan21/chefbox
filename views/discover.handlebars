@@ -47,18 +47,22 @@
 </head>
 <body>
   <!-- Navigation -->
-  {{> navbar}}
+  {{#if login}}
+    {{> navbar-loggedin}}
+  {{else}}
+    {{> navbar}}
+  {{/if}}
   
   <header>
   <h1>Explore the culinary world</h1>
-  <p>Discover the best pop-ups and trending chefs around you!</p>
+  <p>Hi {{user.firstname}}, discover the best pop-ups and trending chefs around you!</p>
   </header>
 
-  {{#each fooditems}}
+  {{#each data.fooditems}}
   <div class="image">
     <button style="background: #fff; border: none; text-shadow: none;">
       <img src="{{imageURL}}" alt="" />
-      <h2><span>{{headline}}<span class="spacer"></span><br/></span></h2>
+      <h2><span>{{price}} | {{headline}}<span class="spacer"></span><br/></span></h2>
     </button>
   </div>
   {{/each}}

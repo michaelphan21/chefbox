@@ -38,7 +38,11 @@
   </style>
 </head>
 <body>
+{{#if login}}
+  {{> navbar-loggedin}}
+{{else}}
   {{> navbar}}
+{{/if}}
   <div class="container" style="text-align: center; position: relative; z-index: 1" id="container">
       <div class="form-group">
           <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">

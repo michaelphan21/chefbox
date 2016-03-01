@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var monk = require('monk');
 var handlebars = require('express-handlebars');
+var session = require('express-session');
 
 /* Custom Routes */
 var main = require('./routes/main');
@@ -13,14 +14,12 @@ var search = require('./routes/search');
 var signupdata = require('./routes/signupdata');
 var foodinfo = require('./routes/foodinfo');
 var signuplogin = require('./routes/signup-login');
-var help = require('./routes/help');
+var helpHIW = require('./routes/helpHIW');
 var discover = require('./routes/discover');
-var howitworks = require('./routes/howitworks');
-var becomeachef = require('./routes/becomeachef');
 var searchdata = require('./routes/searchdata');
 var message = require('./routes/message');
-var profile = require('./routes/profile');
-var success = require('./routes/success');
+var becomeachef = require('./routes/becomeachef');
+var contactus = require('./routes/contactus');
 
 
 var app = express();
@@ -36,20 +35,24 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: '1A3sllsd1ks6lsobaq129fb85@_a393lskd#4mciwla,llaADK298dsj2',
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* Views */
 app.use('/', main);
 app.use('/search', search);
 app.use('/signup-login', signuplogin);
-app.use('/help', help);
+app.use('/helpHIW', helpHIW);
 app.use('/discover', discover);
-app.use('/howitworks', howitworks);
-app.use('/becomeachef', becomeachef);
 app.use('/foodinfo', foodinfo);
 app.use('/message', message);
-app.use('/profile', profile);
-app.use('/success', success);
+app.use('/becomeachef', becomeachef);
+app.use('/contactus', contactus);
+
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);
@@ -70,7 +73,6 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
-    console.log("hehe");
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -82,7 +84,6 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  console.log('hehe2');
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,

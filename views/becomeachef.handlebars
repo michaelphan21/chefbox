@@ -1,58 +1,80 @@
 <!DOCTYPE html>
+<!-- TODO -->
+<!--
+  Modify the code to render fetch N lines (an idea about N: 
+  twice the size of the number of rows that can be viewed on the screen
+  without scrolling?) from the available items' database
+-->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Hyeonsu Kang">
 
-    <title>Chefbox</title>
+  <title>Chefbox</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/form.css">
 
-    <!-- Custom CSS -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet" />
-    <link href="css/main.css" />
-    <link href="css/becomeachef.css" rel="stylesheet" />
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script> 
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-  {{> navbar}}
+  {{#if login}}
+    {{> navbar-loggedin}}
+  {{else}}
+    {{> navbar}}
+  {{/if}}
 
-  <form action="success">
-  <p>Do you have a rating of 4.0 or higher?<p>
-  <select>
-    <option value="blank"> </option>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
+  <!-- Page Content -->
+  <div class="container-fluid">
+    <div class="col-m2-6">
+        <h3>Hi {{user.firstname}}, show your food to people!</h3>
+        <form id="form">
+          <div class="success_wrapper">
+            <div class="success-message">Contact form submitted</div>
+          </div>
+          <strong>Name of food</strong>
+          <label class="name">
+            <input type="text" placeholder="Name of food" data-constraints="@Required @JustLetters" />
+            <span class="empty-message">*This field is required.</span>
+            <span class="error-message">*This is not a valid name.</span>
+          </label>
+          <strong>Pick up time(s)</strong>
+          <label class="tmDatepicker">
+            <input type="text" name="Pick-up" placeHolder='28/02/2016' data-constraints="@NotEmpty @Required @Date"/>
+          </label>
+          <strong>Quantity (portion size, amount / 1 adult)</strong>
+          <div class="fl1 fl2">
+            <select name="quantity" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="clear"></div>
+          <label class="message">
+            <textarea placeholder="Message:" data-constraints='@Required @Length(min=0,max=999999)'></textarea>
+          </label>
+          <div>
+            <div class="clear"><p>&nbsp;</p></div>
+            <button data-type="reset" class="btn btn-default"><strong>Clear</strong></button>
+            &nbsp;&nbsp;<button data-type="submit" class="btn btn-primary"><strong>Post</strong></button>
+          </div>
+        </form>
+    </div>
+  </div>
 
-  <p>Do you have at least 100 reviews?<p>
-  <select>
-  <option value="blank"> </option>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
-
-  <p>Leave a comment below explaining why you deserve to be promoted to chef standing: <p>
-   <textarea id = "myTextArea"rows = "8" cols = "80" required> </textarea>
-  <br>
-  <br>
-  <input type = "submit" value="Submit">
-  </form>
   {{> footer}}
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
 
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -6,12 +6,10 @@ var data = require('../data.json');
 
 router.get('/', function(req, res) {
 	var userdata = {
-		"data": data,
-		"username": req.query.username,
-		"email": req.query.email
+		user: req.session.user,
+		data: data,
+		login: req.session.login
 	};
-	console.log(userdata["username"]);
-	console.log(userdata["email"]);
   res.render('search', userdata);
 });
 
