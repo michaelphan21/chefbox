@@ -114,7 +114,7 @@ var SignupModalController = {
 
     base.signupBtn.on("click", function(e) {
       e.preventDefault();
-
+      ga('send','event','Like','click');
       base.signupClear();
 
       if (base.signupInputFirstname.val().length == 0) {
