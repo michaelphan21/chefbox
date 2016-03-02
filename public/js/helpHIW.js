@@ -8,6 +8,7 @@ $(document).ready(function() {
 function initializePage() {
 	console.log("initializePage");
 	$('#help1').click(function (e) {
+		ga('send', 'event', 'viewed_the_help_menu', 'click');
 		ga('send','event','viewed_the_first_help_menu','click');
 		e.preventDefault();
 		console.log('help1 clicked');
@@ -18,6 +19,7 @@ function initializePage() {
 	});
 	$('#help2').click(function (e) {
 		e.preventDefault();
+		ga('send', 'event', 'viewed_the_help_menu', 'click');
 		ga('send','event','viewed_the_second_help_menu','click');
 /*
 		var htmlTxt = '<h1>&nbsp;FAQ</h1>'
@@ -37,6 +39,7 @@ function initializePage() {
 	});
 	$('#help3').click(function (e) {
 		e.preventDefault();
+		ga('send', 'event', 'viewed_the_help_menu', 'click');
 		ga('send','event','viewed_the_third_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">How to Become a Chef</h3>'
 		htmlTxt += 'Becoming a chef comes with great responsibilities. ';
@@ -56,6 +59,7 @@ function initializePage() {
 	});
 	$('#help4').click(function (e) {
 		e.preventDefault();
+		ga('send', 'event', 'viewed_the_help_menu', 'click');
 		ga('send','event','viewed_the_fourth_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">Reviews</h3>'
 		htmlTxt += 'Reviews can be one of the biggest influences and can say a lot about your business. A majority of consumers rely on reviews to be a factor in making their final purchase decisions.';
@@ -67,6 +71,7 @@ function initializePage() {
 	});
 	$('#help5').click(function (e) {
 		e.preventDefault();
+		ga('send', 'event', 'viewed_the_help_menu', 'click');
 		ga('send','event','viewed_the_fifth_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">Policies</h3>'
 		htmlTxt += 'It is difficult to regulate any unlawfully doing by one another since all transaction and deals are done in person. All that we ask of the community is to be truthful and transparent to others around you! Otherwise, if you obtain a necessary amount of reports from the community, you will be permanently banned from the ChefBox.';
@@ -78,6 +83,7 @@ function initializePage() {
 	});
 	$('#help6').click(function (e) {
 		e.preventDefault();
+		ga('send', 'event', 'viewed_the_help_menu', 'click');
 		ga('send','event','viewed_the_sixth_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">FAQ</h3>'
 		htmlTxt += '<h3 style="text-align:center; color:#666666">How do I make a purchase?</h3>';
