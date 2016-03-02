@@ -8,6 +8,7 @@ $(document).ready(function() {
 function initializePage() {
 	console.log("initializePage");
 	$('#help1').click(function (e) {
+		ga('send','event','viewed_the_first_help_menu','click');
 		e.preventDefault();
 		console.log('help1 clicked');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">Getting Started</h3>'
@@ -17,6 +18,7 @@ function initializePage() {
 	});
 	$('#help2').click(function (e) {
 		e.preventDefault();
+		ga('send','event','viewed_the_second_help_menu','click');
 /*
 		var htmlTxt = '<h1>&nbsp;FAQ</h1>'
 		htmlTxt += '<p style="margin: 0 15px 0 15px; text-align: justify;">&nbsp;Lobortis arcu eu diam  Fusce lobortis arcu eu diam ullamcorper, quis rutrum sapien sollicitudin. Nam felis diam, efficitur sed leo id, consequat lobortis mauris. Nam id fermentum magna. In hac habitasse platea dictumst. Cras eget est fermentum, cursus ligula ut, tristique ligula. Pellentesque rutrum accumsan dignissim. Fusce porttitor lorem orci, sit amet maximus eros sagittis ultrices. Duis porta, nunc a interdum viverra, lorem odio volutpat quam, id feugiat tortor ipsum ut Mauris orci neque, venenatis a turpis a, viverra sodales ex. Nulla sit amet auctor neque. Quisque maximus porttitor purus, eu efficitur sapien vehicula quis. Praesent facilisis eu nunc et ultrices.Fusce lobortis arcu eu diam ullamcorper, quis rutrum sapien sollicitudin. Nam felis diam, efficitur sed leo id, consequat lobortis mauris. Nam id fermentum magna. In hac habitasse platea dictumst. Cras eget est fermentum, cursus ligula ut, tristique ligula. Pellentesque rutrum accumsan dignissim. Fusce porttitor lorem orci, sit amet maximus eros sagittis ultrices. Duis porta, nunc a interdum viverra, lorem odio volutpat quam, id feugiat tortor ipsum ut Mauris orci neque, venenatis a turpis a, viverra sodales ex. Nulla sit amet auctor neque. Quisque maximus porttitor purus, eu efficitur sapien vehicula quis. Praesent facilisis eu nunc et ultrices.</p>';
@@ -35,6 +37,7 @@ function initializePage() {
 	});
 	$('#help3').click(function (e) {
 		e.preventDefault();
+		ga('send','event','viewed_the_third_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">How to Become a Chef</h3>'
 		htmlTxt += 'Becoming a chef comes with great responsibilities. ';
 		htmlTxt += '<br><br>';
@@ -53,6 +56,7 @@ function initializePage() {
 	});
 	$('#help4').click(function (e) {
 		e.preventDefault();
+		ga('send','event','viewed_the_fourth_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">Reviews</h3>'
 		htmlTxt += 'Reviews can be one of the biggest influences and can say a lot about your business. A majority of consumers rely on reviews to be a factor in making their final purchase decisions.';
 		htmlTxt += '<br><br>';
@@ -63,6 +67,7 @@ function initializePage() {
 	});
 	$('#help5').click(function (e) {
 		e.preventDefault();
+		ga('send','event','viewed_the_fifth_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">Policies</h3>'
 		htmlTxt += 'It is difficult to regulate any unlawfully doing by one another since all transaction and deals are done in person. All that we ask of the community is to be truthful and transparent to others around you! Otherwise, if you obtain a necessary amount of reports from the community, you will be permanently banned from the ChefBox.';
 		htmlTxt += '<br><br>';
@@ -73,6 +78,7 @@ function initializePage() {
 	});
 	$('#help6').click(function (e) {
 		e.preventDefault();
+		ga('send','event','viewed_the_sixth_help_menu','click');
 		var htmlTxt = '<h3 style="text-align:center; color:#666666">FAQ</h3>'
 		htmlTxt += '<h3 style="text-align:center; color:#666666">How do I make a purchase?</h3>';
 		htmlTxt += 'blah blah blah';
@@ -89,6 +95,5 @@ function initializePage() {
 		htmlTxt += '<h3 style="text-align:center; color:#666666">Is there a health requirement on _________?</h3>';
 		htmlTxt += 'blah blah blah';
 		$('#summary').html(htmlTxt);
-
 	});
 }
