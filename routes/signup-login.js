@@ -18,10 +18,10 @@ router.get('/', function(req, res) {
 	console.log("/signup-login");
 	if (req.query.login == "true") {
 		console.log("/login");		
-		res.render('signup-login', {"login": true});
+		res.render('signup-login', {"login-main": true});
 	} else {
 		console.log("/signup");
-	  res.render('signup-login', {"login": false});
+	  res.render('signup-login', {"login-main": false});
 	}
 });
 
