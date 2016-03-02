@@ -18,7 +18,7 @@ var helpHIW = require('./routes/helpHIW');
 var discover = require('./routes/discover');
 var searchdata = require('./routes/searchdata');
 var message = require('./routes/message');
-var becomeachef = require('./routes/becomeachef');
+var postyourfood = require('./routes/postyourfood');
 var contactus = require('./routes/contactus');
 
 
@@ -33,7 +33,7 @@ app.engine('.handlebars', handlebars());
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
   secret: '1A3sllsd1ks6lsobaq129fb85@_a393lskd#4mciwla,llaADK298dsj2',
@@ -41,6 +41,7 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'bat')));
 
 /* Views */
 app.use('/', main);
@@ -50,7 +51,7 @@ app.use('/helpHIW', helpHIW);
 app.use('/discover', discover);
 app.use('/foodinfo', foodinfo);
 app.use('/message', message);
-app.use('/becomeachef', becomeachef);
+app.use('/postyourfood', postyourfood);
 app.use('/contactus', contactus);
 
 

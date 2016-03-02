@@ -35,9 +35,9 @@
   {{/if}}
 
   <!-- Page Content -->
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin: 40px auto; color:#666666;">
     <div class="col-m2-6">
-        <h3>Hi {{user.firstname}}, show your food to people!</h3>
+        <h3>Hi {{#if login}}{{user.firstname}}{{/if}}, show your food to the world!</h3>
         <form id="form">
           <div class="success_wrapper">
             <div class="success-message">Contact form submitted</div>
@@ -65,7 +65,7 @@
           <label class="message">
             <textarea placeholder="Message:" data-constraints='@Required @Length(min=0,max=999999)'></textarea>
           </label>
-          <div>
+          <div style="text-align: center;">
             <div class="clear"><p>&nbsp;</p></div>
             <button data-type="reset" class="btn btn-default"><strong>Clear</strong></button>
             &nbsp;&nbsp;<button data-type="submit" class="btn btn-primary"><strong>Post</strong></button>

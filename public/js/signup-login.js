@@ -1,4 +1,6 @@
-
+/* Color schemes
+ * #008060, #ff8d00
+ */
 var SignupModalController = {
   signupInputFirstnameElementName: "#signup-firstname",
   signupInputLastnameElementName: "#signup-lastname",
