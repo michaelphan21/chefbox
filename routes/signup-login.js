@@ -17,11 +17,13 @@ var UserModel = mongoose.model('users', UserSchema);
 router.get('/', function(req, res) {
 	console.log("/signup-login");
 	if (req.query.login == "true") {
-		console.log("/login");		
-		res.render('signup-login', {"login-main": true});
+		console.log("/login");
+		// the signup and login page differentiation is carried out by the login-main value,
+		// and the login value tells whether or not a user is actually logged in
+		res.render('signup-login', {"login-main": true, "login": false}); 
 	} else {
 		console.log("/signup");
-	  res.render('signup-login', {"login-main": false});
+	  res.render('signup-login', {"login-main": false, "login": false});
 	}
 });
 

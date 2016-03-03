@@ -61,20 +61,20 @@
     <div class="row" style="text-align: center;">
       <div class="col-md-12" align="cetner">
         <a href="#">
-          <img class="img-responsive" src="{{imageURL}}" alt="">
+          <img class="img-responsive" src="{{data.imageURL}}" alt="">
         </a>
       </div>
       <div class="col-md-12">
         <h1 class="page-header">
-          <small id="headline"><b>{{headline}}</b></small>
+          <small id="headline"><b>{{data.headline}}</b></small>
           <br>
-          <small id="price"><b>{{price}}</b></small>
+          <small id="price"><b>{{data.price}}</b></small>
           <br>
           <small id="avgratings">
-            {{numofratings}} ratings:&nbsp;<unli><b>{{avgrating}}/5.0</b></unli>
+            {{data.numofratings}} ratings:&nbsp;<unli><b>{{data.avgrating}}/5.0</b></unli>
           </small>
         </h1>
-        <p align:"center">{{ingredientdetails}}</p>
+        <p align:"center">{{data.ingredientdetails}}</p>
       </div>      
     </div>
     <div class="row" style="text-align: center;">
@@ -100,11 +100,11 @@
         <tbody>
           <tr>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{calories}}</td>
+            <td>{{data.calories}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{type}}</td>
+            <td>{{data.type}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{ingredients}}</td>
+            <td>{{data.ingredients}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           </tr>
         </tbody>
@@ -124,13 +124,13 @@
           </td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td>
-            {{> orderview this}}
+            {{> orderview this.data}}
           </td>
         </tbody>
       </table>
     </div>
     <br><br><br>
-    <div class="row" style="text-align: center;"><b>{{numofreviews}} Reviews</b></div>
+    <div class="row" style="text-align: center;"><b>{{data.numofreviews}} Reviews</b></div>
     <br>
     <div class="col-md-12">
       <div class="input-group">
@@ -146,7 +146,7 @@
     </div>
     <hr>
     <div class="row" style="text-align: center; width: 100%; margin: auto;">
-      {{#each reviews}}
+      {{#each data.reviews}}
       <div class="col-md-3 portfolio-item">
         <b>{{reviewtitle}} {{rating}}</b>/5.0
         <p>{{review}}</p>

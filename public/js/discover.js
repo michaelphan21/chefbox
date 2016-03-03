@@ -9,8 +9,7 @@ function initializePage() {
 	console.log("initializePage()");
 
 	$('.image button').click(function() {
-		var foodID = $(this).closest('.wrapper').attr('id');
-		console.log("foodID:" + foodID);
+		var foodID = $(this).parent().attr('id');
 		var foodInfoURL = "/searchID?id=" + foodID;
 		$.get(foodInfoURL, function(data) {
 			document.location.href = "foodinfo?idx=" + data;

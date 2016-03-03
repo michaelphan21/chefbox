@@ -5,7 +5,12 @@ var http = require('http').Server(app);
 var data = require('../data.json');
 
 router.get('/', function(req, res) {
-	res.render('foodinfo', data.fooditems[req.query.idx]);
+	var userdata = {
+		user: req.session.user,
+		data: data.fooditems[req.query.idx],
+		login: req.session.login
+	};
+  res.render('foodinfo', userdata);
 });
 
 module.exports = router;
