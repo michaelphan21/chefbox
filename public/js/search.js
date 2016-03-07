@@ -18,10 +18,14 @@ function initializePage() {
 		console.log(".btn-default-order clicked");
 		ga('send','event','viewed_the_food_item','click');
 		var foodID = $(this).closest('.col-md-3.portfolio-item').attr('id');
+		/*
 		var foodInfoURL = "/searchID?id=" + foodID;
 		$.get(foodInfoURL, function(data) {
 			document.location.href = "/foodinfo?idx=" + data;
 		});
+		*/
+		var foodInfoURL = "/foodinfo?id=" + foodID;
+		document.location.href = foodInfoURL;
 	});
 
 	$('.btn-default-select').click(function() {

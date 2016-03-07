@@ -5,6 +5,7 @@ var router = express.Router();
 var app = express();
 var http = require('http').Server(app);
 var Schema = mongoose.Schema;
+
 var UserSchema = new Schema({
 	email: {type: String, unique: true},
 	firstname: String,
@@ -12,6 +13,7 @@ var UserSchema = new Schema({
 	combined: Buffer,
 	roles: Array
 });
+
 var UserModel = mongoose.model('users', UserSchema);
 
 router.get('/', function(req, res) {
@@ -32,7 +34,6 @@ router.get('/signup', function(req, res) {
 	router.signup(req.query.email, req.query.password, req.query.firstname, req.query.lastname, function(err, user) {
 		mongoose.connection.close();
 		if (user) {
-
 			// regenerate session when signing in
 			// to prevent fixation
 			req.session.regenerate(function() {
@@ -112,7 +113,7 @@ router.hash = function(password, callback) {
 
 router.signup = function(email, password, firstname, lastname, fn) {
 	console.log('signup()');
-	var mongoose = router.connectToDB(function(err, mongoose) {
+	/*var mongoose = */router.connectToDB(function(err, mongoose) {
 		if (!err) {
 
 			router.hash(password, function(err, combined) {

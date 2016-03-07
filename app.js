@@ -32,8 +32,9 @@ app.engine('.handlebars', handlebars());
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '50mb' }));  
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+//app.use(bodyParser.text({ type: 'application/text-enriched', limit: '10mb' })); // setting the maximum to 10MB
 app.use(cookieParser());
 app.use(session({
   secret: '1A3sllsd1ks6lsobaq129fb85@_a393lskd#4mciwla,llaADK298dsj2',
@@ -53,7 +54,6 @@ app.use('/foodinfo', foodinfo);
 app.use('/message', message);
 app.use('/postyourfood', postyourfood);
 app.use('/contactus', contactus);
-
 
 app.get('/searchID', searchdata.sendIndex);
 app.get('/searchData', searchdata.sendData);

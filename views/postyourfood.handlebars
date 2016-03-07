@@ -15,10 +15,12 @@
   <title>Chefbox</title>
 
   <link href="css/bootstrap.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/form.css">
 
   <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/canvas-to-blob.min.js"></script>
+  <script src="js/postyourfood.js"></script>
+  <script src="js/map/googleMapSearch.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,45 +38,128 @@
 
   <!-- Page Content -->
   <div class="container-fluid" style="margin: 40px auto; color:#666666;">
-    <div class="col-m2-6">
-        <h3>Hi {{#if login}}{{user.firstname}}{{/if}}, show your food to the world!</h3>
-        <form id="form">
-          <div class="success_wrapper">
-            <div class="success-message">Contact form submitted</div>
-          </div>
-          <strong>Name of food</strong>
-          <label class="name">
-            <input type="text" placeholder="Name of food" data-constraints="@Required @JustLetters" />
-            <span class="empty-message">*This field is required.</span>
-            <span class="error-message">*This is not a valid name.</span>
-          </label>
-          <strong>Pick up time(s)</strong>
-          <label class="tmDatepicker">
-            <input type="text" name="Pick-up" placeHolder='28/02/2016' data-constraints="@NotEmpty @Required @Date"/>
-          </label>
-          <strong>Quantity (portion size, amount / 1 adult)</strong>
-          <div class="fl1 fl2">
-            <select name="quantity" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
-          <div class="clear"></div>
-          <label class="message">
-            <textarea placeholder="Message:" data-constraints='@Required @Length(min=0,max=999999)'></textarea>
-          </label>
-          <div style="text-align: center;">
-            <div class="clear"><p>&nbsp;</p></div>
-            <button data-type="reset" class="btn btn-default"><strong>Clear</strong></button>
-            &nbsp;&nbsp;<button data-type="submit" class="btn btn-primary"><strong>Post</strong></button>
-          </div>
-        </form>
+    <h3>
+      Hi {{#if login}}{{user.firstname}}{{else}}there{{/if}}, show your food to the world!
+    </h3>
+
+    <div class="form-group row" style="text-align: center;">
+      <button type="submit" id="start-button" class="btn btn-default">Click to start the camera
+      </button>
+      <button type="submit" id="stop-button" class="btn btn-default" style="display: none;">Stop the camera
+      </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+      <button type="submit" id="camera-button" class="btn btn-primary">Take a picture</button>
     </div>
+
+
+    <div class="form-group row" id="video-div" style="display: none; margin-left: auto; margin-right: auto;">
+      <video autoplay id="camera-video" style="width: 100%; margin-left: auto; margin-right: auto;"></video>
+    </div>
+
+    <div class="form-group row" id="canvas-div" style="margin-left: auto; margin-right: auto;">
+      <canvas id="camera-canvas" style="width: 100%; margin-left: auto; margin-right: auto;"></canvas>
+    </div>
+
+    <form id="form">
+      <div class="form-group row">
+        <label for="foodName" class="col-sm-2 form-control-label">Food name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="foodName" placeholder="Enter the name of food">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="ingredient" class="col-sm-2 form-control-label">Ingredients</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ingredient" placeholder="Ingredients of food">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="description" class="col-sm-2 form-control-label">
+          Description of the food item
+        </label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="description" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="price" class="col-sm-2 form-control-label">
+          Amount (in dollars)
+        </label>
+        <div class="col-sm-10" id="price">
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input type="text" class="form-control" id="upperPrice" placeholder="amount">
+            <div class="input-group-addon">.</div>
+            <input type="text" class="form-control" id="lowerPrice" placeholder="amount" value="0">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="quantity" class="col-sm-2 form-control-label">
+          Available quantity
+        </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="quantityMoreThan10" placeholder="The number of available items">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="foodType" class="col-sm-2">
+          The type of food
+        </label>
+        <div class="col-sm-10">
+          <div class="radio">
+            <label>
+              <input type="radio" name="foodType" id="option1" value="vegeterian">
+              Vegeterian
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="foodType" id="option2" value="vegan">
+              Vegan
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="foodType" id="option3" value="pescatarian">
+              Pescatarian
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="foodType" id="option4" value="nonvegetarian">
+              Non-vegetarian
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="pickupLoc" class="col-sm-2">
+          Click on the map to indicate the pick up location
+        </label>
+        <div class="col-sm-10">
+          <div class="col-md-12 portfolio-item" id="map-container" style="height: 350px;"></div>
+        </div>
+      </div>
+
+      <div class="form-group-row" style="text-align: center;">
+        <button type="submit" class="btn btn-default" id="clearBtn">Clear</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary" id="postBtn">Post</button>
+      </div>
+    </form>
   </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=initMap" async defer></script>
 
   {{> footer}}
   {{> googleAnalytics}}
+  
 </body>
 </html>
