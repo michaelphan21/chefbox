@@ -17,12 +17,6 @@
   <link href="css/bootstrap.css" rel="stylesheet" />
   <link href="css/search-map.css" rel="stylesheet" />
 
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/canvas-to-blob.min.js"></script>
-  <script src="js/postyourfood.js"></script>
-  <script src="js/map/googleMapSearch.js"></script>
-
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -160,10 +154,16 @@
     </form>
   </div>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&libraries=places&callback=postInitMap" async defer></script>
 
   {{> footer}}
   {{> googleAnalytics}}
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/canvas-to-blob.min.js"></script>
+  <script src="js/postyourfood.js"></script>
+  <script src="js/map/googleMapSearch.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&libraries=places&callback=postInitMap" async defer></script>
 
 </body>
 </html>

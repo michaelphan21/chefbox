@@ -46,12 +46,6 @@
      padding:0 5px;
   }
   </style>
-  
-  <script src="js/jquery.js"></script>
-  <!-- Necessary for the Bootstrap modal view -->
-  <script src="js/bootstrap.min.js"></script> 
-  <script src="js/search.js"></script>
-  <script src="js/map/googleMapSearch.js"></script>
 </head>
 <body>
   {{#if login}}
@@ -134,7 +128,6 @@
     {{/if}}
 
     <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=searchInitMap" async defer></script>
     <!--  
       <div class="col-md-12 portfolio-item">
         <button type="button" class="btn btn-primary" id="moreBtn">&nbsp;&nbsp;&nbsp;<b>more</b>&nbsp;&nbsp;&nbsp;</button>
@@ -144,5 +137,12 @@
 
   {{> footer}}
   {{> googleAnalytics}}
+  <script src="js/jquery.js"></script>
+  <!-- Necessary for the Bootstrap modal view -->
+  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/search.js"></script>
+  <script src="js/map/googleMapSearch.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=searchInitMap" async defer></script>
+
 </body>
 </html>
