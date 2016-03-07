@@ -15,6 +15,8 @@ var PostModalController = {
 	postBtnElementName: "#postBtn",
 	clearBtnElementName: "#clearBtn",
 	postInputAvailableTimesElementName: "#availableTimes",
+	postInputLatElementName: "#lat",
+	postInputLngElementName: "#lng",
 
 	postInputFoodname: null,
 	postInputQuantity: null,
@@ -27,6 +29,8 @@ var PostModalController = {
 	postVideoDiv: null,
 	postCanvasDiv: null,
 	postInputAvailableTimes: null,
+	postInputLat: null,
+	postInputLng: null,
 
 	startBtn: null,
 	stopBtn: null,
@@ -37,11 +41,6 @@ var PostModalController = {
 	imageData: null,
 	imageDataURL: null,
 
-	finishPost: function() {
-		base.clearField();
-		alert("Your food was posted!");
-	},
-
 	clearFields: function() {
 		var base = this;
 		base.postInputFoodname.val("");
@@ -51,7 +50,15 @@ var PostModalController = {
 		base.postInputUpperPrice.val("");
 		base.postInputLowerPrice.val("");
 		base.postVideoDiv.hide();
+		base.postInputLat.val("");
+		base.postInputLng.val("");
 		document.getElementById('camera-video').pause();
+	},
+
+	finishPost: function() {
+		var base = this;
+		base.clearFields();
+		alert("Your food was posted!");
 	},
 
 	findElements: function() {
@@ -68,12 +75,15 @@ var PostModalController = {
 		base.postVideoDiv = $(base.postVideoDivElementName);
 		base.postCanvasDiv = $(base.postCanvasDivElementName);
 		base.postInputAvailableTimes = $(base.postInputAvailableTimesElementName);
+		base.postInputLat = $(base.postInputLatElementName);
+		base.postInputLng = $(base.postInputLngElementName);
 
 		base.startBtn = $(base.startBtnElementName);
 		base.stopBtn = $(base.stopBtnElementName);
 		base.postBtn = $(base.postBtnElementName);
 		base.clearBtn = $(base.clearBtnElementName);
 		base.cameraBtn = $(base.cameraBtnElementName);
+		base.cameraBtn.prop("disabled", true);
 
 		return base;
 	},
@@ -101,6 +111,10 @@ var PostModalController = {
 				,ingredients: base.postInputIngredient.val()
 				,description: base.postInputDescription.val()
 				,imageURL: base.imageDataURL
+				,latLng: {
+					lat: base.postInputLat.val()
+					,lng: base.postInputLng.val()
+				}
 			};
 			
 			$.ajax({

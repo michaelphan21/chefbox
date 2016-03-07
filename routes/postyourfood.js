@@ -59,8 +59,8 @@ router.post('/', function(req, res) {
 		,email: email
  		,price: req.body.price
 		,location: {
-			lat: 0
-			,lng: 0 
+			lat: req.body.latLng.lat
+			,lng: req.body.latLng.lng
 		}
 		,name: req.body.foodName
 		,description: req.body.description

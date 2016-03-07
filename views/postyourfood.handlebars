@@ -15,6 +15,7 @@
   <title>Chefbox</title>
 
   <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/search-map.css" rel="stylesheet" />
 
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -140,11 +141,14 @@
       </div>
 
       <div class="form-group row">
-        <label for="pickupLoc" class="col-sm-2">
+        <label for="map-container" class="col-sm-2">
           Click on the map to indicate the pick up location
         </label>
         <div class="col-sm-10">
+          <input id="pac-input" class="controls" type="text" placeholder="Search box">
           <div class="col-md-12 portfolio-item" id="map-container" style="height: 350px;"></div>
+          <input type="hidden" id="lat" />
+          <input type="hidden" id="lng" />
         </div>
       </div>
 
@@ -156,10 +160,10 @@
     </form>
   </div>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&libraries=places&callback=postInitMap" async defer></script>
 
   {{> footer}}
   {{> googleAnalytics}}
-  
+
 </body>
 </html>

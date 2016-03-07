@@ -7,48 +7,51 @@
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chefbox</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chefbox</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/4-col-portfolio.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/4-col-portfolio.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style>
+  .image { 
+     position: relative; 
+     width: 100%; /* for IE 6 */
+  }
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style>
-    .image { 
-       position: relative; 
-       width: 100%; /* for IE 6 */
-    }
-
-    h2 { 
-       position: absolute;
-       bottom: 10px;
-       left: 0; 
-       width: 100%; 
-       text-align: left;
-    }
-    h2 span { 
-       color: white; 
-       font: bold 24px/45px Helvetica, Sans-Serif; 
-       letter-spacing: -1px;  
-       background: rgb(0, 0, 0); /* fallback color */
-       background: rgba(0, 0, 0, 0.7);
-       padding: 10px; 
-    }
-    h2 span.spacer {
-       padding:0 5px;
-    }
-    </style>
+  h2 { 
+     position: absolute;
+     bottom: 10px;
+     left: 0; 
+     width: 100%; 
+     text-align: left;
+  }
+  h2 span { 
+     color: white; 
+     font: bold 24px/45px Helvetica, Sans-Serif; 
+     letter-spacing: -1px;  
+     background: rgb(0, 0, 0); /* fallback color */
+     background: rgba(0, 0, 0, 0.7);
+     padding: 10px; 
+  }
+  h2 span.spacer {
+     padding:0 5px;
+  }
+  </style>
+  
+  <script src="js/jquery.js"></script>
+  <!-- Necessary for the Bootstrap modal view -->
+  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/search.js"></script>
+  <script src="js/map/googleMapSearch.js"></script>
 </head>
 <body>
   {{#if login}}
@@ -63,7 +66,7 @@
       <div class="input-group col-md-7">
         <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{#if login}}{{user.firstname}}{{else}}there{{/if}}! What shall we eat today?" style="text-align: center;"/>
         <div class="input-group-btn" role="group">
-          <button style="background: #fff; border: none; text-shadow: none; padding: none;">
+          <button id="search-btn" style="background: #fff; border: none; text-shadow: none; padding: none;">
             <span>
               <img src="images/magnifying-glass32.png" alt="none" />
             </span>
@@ -74,52 +77,64 @@
     <hr>
     <div class="col-md-12 portfolio-item" id="map-container" style="height: 350px;"></div>
     <hr>
-    {{#each docs}}
-      <div class="col-md-3 portfolio-item" id="{{createdOn}}" style="text-align: center;">
-        <table>
-          <thead>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <button style="background: #fff; border: none; text-shadow: none;">
-                  <span class="image">
-                    <img src="data:{{img.contentType}};base64,{{img.data}}" style="width: 100%;" alt="none" />
-                    <h2><span>${{price}}<span class="spacer"></span><br/></span></h2>
-                  </span>
-                </button>
-              </td>
-              <td>
-                <b>${{price}}</b>, <b>{{reviews.avgrating}}</b>/5.0
-                <br>
-                  {{description}}
-                <br>
-                <b>There are {{count}} items left</b>
-                <br>
-                <table align="center">
-                  <thead>
-                  </thead>
-                  <tbody>
-                    <td>
-                      <br><button id="viewbtn{{@index}}" class="btn btn-default-order">view</button>
-                    </td>
-                    <td>&nbsp;&nbsp;</td>
-                    <td>
-                      <br>
-                      {{> orderview this}}
-                    </td>                      
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr>
-    {{/each}}
+    {{#if docs}}
+      <input type="hidden" id="len" value="{{docs.length}}" />
+      {{#each docs}}
+        <input type="hidden" id="createdOn{{@index}}" value="{{createdOn}}"/>
+        <input type="hidden" id="lat{{@index}}" value="{{location.lat}}"/>
+        <input type="hidden" id="lng{{@index}}" value="{{location.lng}}"/>
+        <input type="hidden" id="price{{@index}}" value="{{price}}"/>
+        <input type="hidden" id="name{{@index}}" value="{{name}}"/>
+        <input type="hidden" id="description{{@index}}" value="{{description}}"/>
+        <div class="col-md-12 portfolio-item" id="{{createdOn}}" style="text-align: center;">
+          <table>
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <button style="background: #fff; border: none; text-shadow: none;">
+                    <span class="image">
+                      <img id="img{{@index}}" src="data:{{img.contentType}};base64,{{img.data}}" style="width: 100%;" alt="none" />
+                      <h2><span>${{price}}<span class="spacer"></span><br/></span></h2>
+                    </span>
+                  </button>
+                </td>
+                <td>
+                  <b>${{price}}</b>, <b>{{reviews.avgrating}}</b>/5.0
+                  <br>
+                    {{description}}
+                  <br>
+                  <b>There are {{count}} items left</b>
+                  <br>
+                  <table align="center">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <td>
+                        <br><button id="viewbtn{{@index}}" class="btn btn-default-order">view</button>
+                      </td>
+                      <td>&nbsp;&nbsp;</td>
+                      <td>
+                        <br>
+                        {{> orderview this}}
+                      </td>                      
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+      {{/each}}
+    {{else}}
+      <input type="hidden" id="len" value=0/>
+      {{> noresult}}
+    {{/if}}
 
     <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=searchInitMap" async defer></script>
     <!--  
       <div class="col-md-12 portfolio-item">
         <button type="button" class="btn btn-primary" id="moreBtn">&nbsp;&nbsp;&nbsp;<b>more</b>&nbsp;&nbsp;&nbsp;</button>
@@ -128,23 +143,6 @@
   </div>
 
   {{> footer}}
-
-  <script src="js/jquery.js"></script>
-  <!-- Necessary for the Bootstrap modal view -->
-  <script src="js/bootstrap.min.js"></script> 
-  <script src="js/search.js"></script>
-  <script src="js/map/googleMapSearch.js"></script>
-
-  <!-- custom -->
-  <script>
-  function loadMoreFoodItems() {
-
-  }
-
-  function loadFoodInfo() {
-    var id = $(this).attr('id');
-  }
-  </script>
   {{> googleAnalytics}}
 </body>
 </html>

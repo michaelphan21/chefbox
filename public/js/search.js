@@ -17,13 +17,7 @@ function initializePage() {
 	$('.btn-default-order').click(function() {
 		console.log(".btn-default-order clicked");
 		ga('send','event','viewed_the_food_item','click');
-		var foodID = $(this).closest('.col-md-3.portfolio-item').attr('id');
-		/*
-		var foodInfoURL = "/searchID?id=" + foodID;
-		$.get(foodInfoURL, function(data) {
-			document.location.href = "/foodinfo?idx=" + data;
-		});
-		*/
+		var foodID = $(this).closest('.col-md-12.portfolio-item').attr('id');
 		var foodInfoURL = "/foodinfo?id=" + foodID;
 		document.location.href = foodInfoURL;
 	});
@@ -75,3 +69,20 @@ function initializePage() {
 	});
 	*/
 }
+
+/*
+var SearchModalController = {
+	keywordSearchElementName: "keyword-search"
+	,searchBtnElementName: "search-btn"
+	,docLengthElementName: "len"
+	,TemplateLatElementName: "lat"
+	,TemplateLngElementName: "lng"
+	,TemplateViewBtnElementName: "viewbtn"
+};
+
+var SearchModalController = SearchModalController || {};
+
+$(document).ready(function() {
+	SearchModalController.initialize();
+});
+*/
