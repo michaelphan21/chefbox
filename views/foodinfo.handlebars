@@ -38,43 +38,44 @@
   </style>
 </head>
 <body>
-{{#if login}}
-  {{> navbar-loggedin}}
-{{else}}
-  {{> navbar}}
-{{/if}}
+  {{#if login}}
+    {{> navbar-loggedin}}
+  {{else}}
+    {{> navbar}}
+  {{/if}}
+
   <div class="container" style="text-align: center; position: relative; z-index: 1" id="container">
-      <div class="form-group">
-          <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">
-              <input id="keyword-search" type="text" class="form-control"  placeholder="What kind of food?" style="text-align: center;"/>
-              <div class="input-group-btn" role="group">
-                  <button style="background: #fff; border: none; text-shadow: none; padding: none;">
+    <div class="form-group">
+      <div class="input-group col-md-7" style="padding: 0 20px 0 20px;">
+        <input id="keyword-search" type="text" class="form-control"  placeholder="Hi {{#if login}}{{user.firstname}}{{else}}there{{/if}}, what kind of food?" style="text-align: center;"/>
+        <div class="input-group-btn" role="group">
+          <button style="background: #fff; border: none; text-shadow: none; padding: none;">
             <span>
               <a href="search"><img src="images/magnifying-glass32.png" alt="none"/></a>
             </span>
-                  </button>
-              </div>
-          </div>
+          </button>
+        </div>
       </div>
+    </div>
   </div>
   <div class="container">
     <div class="row" style="text-align: center;">
       <div class="col-md-12" align="cetner">
         <a href="#">
-          <img class="img-responsive" src="{{data.imageURL}}" alt="">
+          <img class="img-responsive" src="data:{{doc.img.contentType}};base64,{{doc.img.data}}" alt="">
         </a>
       </div>
       <div class="col-md-12">
         <h1 class="page-header">
-          <small id="headline"><b>{{data.headline}}</b></small>
+          <small id="headline"><b>{{doc.name}}</b></small>
           <br>
-          <small id="price"><b>{{data.price}}</b></small>
+          <small id="price"><b>${{doc.price}}</b></small>
           <br>
           <small id="avgratings">
-            {{data.numofratings}} ratings:&nbsp;<unli><b>{{data.avgrating}}/5.0</b></unli>
+            {{doc.reviews.numofratings}} ratings:&nbsp;<unli><b>{{doc.reviews.avgrating}}/5.0</b></unli>
           </small>
         </h1>
-        <p align:"center">{{data.ingredientdetails}}</p>
+        <p align:"center">{{doc.ingredients}}</p>
       </div>      
     </div>
     <div class="row" style="text-align: center;">
@@ -100,11 +101,11 @@
         <tbody>
           <tr>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{data.calories}}</td>
+            <td>{{doc.calories}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{data.type}}</td>
+            <td>{{doc.type}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>{{data.ingredients}}</td>
+            <td>{{doc.ingredients}}</td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           </tr>
         </tbody>
@@ -130,7 +131,7 @@
       </table>
     </div>
     <br><br><br>
-    <div class="row" style="text-align: center;"><b>{{data.numofreviews}} Reviews</b></div>
+    <div class="row" style="text-align: center;"><b>{{doc.reviews.numofreviews}} Reviews</b></div>
     <br>
     <div class="col-md-12">
       <div class="input-group">
@@ -145,11 +146,11 @@
       </div>
     </div>
     <hr>
-    <div class="row" style="text-align: center; width: 100%; margin: auto;">
-      {{#each data.reviews}}
+    <div class="row" style="width: 100%; margin: auto;">
+      {{#each doc.reviews.userReviews}}
       <div class="col-md-3 portfolio-item">
-        <b>{{reviewtitle}} {{rating}}</b>/5.0
-        <p>{{review}}</p>
+        <p><b>{{reviewtitle}}</b>&nbsp;{{rating}}/5.0</p>
+        <small>{{review}}</small>
       </div>
       {{/each}}
     </div>
