@@ -1,32 +1,3 @@
-var map;
-var infoWindow;
-
-function initialize() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 32.84, lng: -117.25},
-    zoom: 14
-  });
-
-  infoWindow = new google.maps.InfoWindow({map: map});
-
-  /*
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      infoWindow.setPosition(pos);
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-  */
-}
-
 function createMap() {
   var map = new google.maps.Map(document.getElementById('map-container'), {
     center: {lat: 32.878484, lng: -117.213509}
@@ -53,6 +24,15 @@ function createMap() {
   return map;
 }
 
+// Adds a marker to the map.
+function addMarker(location, map) {
+  // Add the marker at the clicked location, and add the next-available label
+  // from the array of alphabetical characters.
+  var marker = new google.maps.Marker({
+    position: location
+    ,map: map
+  });
+}
 
 // Include the libraries=places
 // parameter when you first load the API. For example:
@@ -123,16 +103,6 @@ function postInitMap() {
   });
 }
 
-// Adds a marker to the map.
-function addMarker(location, map) {
-  // Add the marker at the clicked location, and add the next-available label
-  // from the array of alphabetical characters.
-  var marker = new google.maps.Marker({
-    position: location
-    ,map: map
-  });
-}
-
 function searchInitMap() {
   var map = createMap();
   var markers = [];
@@ -154,7 +124,7 @@ function searchInitMap() {
     var name = document.getElementById('name'+i).value;
     var price = '$'+document.getElementById('price'+i).value;
     var description = document.getElementById('description'+i).value;
-    var contentString = name + ', ' + description + '<br>' + price + '<br><a href="foodinfo?id='+document.getElementById('createdOn'+i).value+'">view</a>';
+    var contentString = name + ', ' + description + '<br>' + price + '<br><a href="foodinfo?id='+document.getElementById('createdOnId'+i).value+'">view</a>';
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });

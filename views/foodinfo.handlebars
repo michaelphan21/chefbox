@@ -127,7 +127,7 @@
           </td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td>
-            {{> orderview this.data}}
+            {{> orderview this.doc}}
           </td>
         </tbody>
       </table>
@@ -156,16 +156,20 @@
       </div>
       {{/each}}
     </div>
-
+    <hr>
+    <div class="col-md-12">
+      <p style="text-align: center; color:#666666;"><b>You can pick up this item at the location below</b></p>
+    </div>
     <div class="col-md-12" id="map-container" style="height: 350px;"></div>
     {{> footer}}
   </div>
 
   {{> googleAnalytics}}
 
-  <script src="../js/jquery.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/map/googleMapSearch.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/map/googleMapSearch.js"></script>
+  <script src="js/foodinfoModal.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=foodinfoInitMap" async defer></script>
 
 </body>

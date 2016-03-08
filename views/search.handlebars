@@ -74,7 +74,7 @@
     {{#if docs}}
       <input type="hidden" id="len" value="{{docs.length}}" />
       {{#each docs}}
-        <input type="hidden" id="createdOn{{@index}}" value="{{createdOn}}"/>
+        <input type="hidden" id="createdOnId{{@index}}" value="{{createdOn}}"/>
         <input type="hidden" id="lat{{@index}}" value="{{location.lat}}"/>
         <input type="hidden" id="lng{{@index}}" value="{{location.lng}}"/>
         <input type="hidden" id="price{{@index}}" value="{{price}}"/>
@@ -87,9 +87,9 @@
             <tbody>
               <tr>
                 <td>
-                  <button style="background: #fff; border: none; text-shadow: none;">
+                  <button id="img{{@index}}" style="background: #fff; border: none; text-shadow: none;">
                     <span class="image">
-                      <img id="img{{@index}}" src="data:{{img.contentType}};base64,{{img.data}}" style="width: 100%;" alt="none" />
+                      <img src="data:{{img.contentType}};base64,{{img.data}}" style="width: 100%;" alt="none" />
                       <h2><span>${{price}}<span class="spacer"></span><br/></span></h2>
                     </span>
                   </button>
@@ -141,6 +141,7 @@
   <!-- Necessary for the Bootstrap modal view -->
   <script src="js/bootstrap.min.js"></script> 
   <script src="js/search.js"></script>
+  <script src="js/foodinfoModal.js"></script>
   <script src="js/map/googleMapSearch.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=searchInitMap" async defer></script>
 

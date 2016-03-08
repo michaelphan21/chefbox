@@ -20,7 +20,7 @@ router.FoodSchema = new Schema({
 	,description: String
 	,ingredients: String
 	,count: { type: Number, min: 0 }
-	,"available-time": [String]
+	,availableTimes: [String]
 	,img: { data: Buffer, contentType: String }
 	,reviews: {
 		numofreviews: { type: Number, min: 0 }
@@ -66,7 +66,7 @@ router.post('/', function(req, res) {
 		,description: req.body.description
 		,ingredients: req.body.ingredients
 		,count: req.body.quantity
-		,"available-time": [
+		,availableTimes: [
 			"Tue, Mar. 15th 12:00 ~ 13:00"
 			,"Wed, Mar. 16th 12:00 ~ 13:00"
 			,"Thu, Mar. 17th 12:00 ~ 13:00"
