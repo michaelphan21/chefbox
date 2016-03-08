@@ -12,14 +12,6 @@ router.get('/', function(req, res) {
 		mongoose.connection.close();
 		res.render('foodinfo', data);
 	});
-	/*
-	var userdata = {
-		user: req.session.user,
-		data: data.fooditems[req.query.idx],
-		login: req.session.login
-	};
-  res.render('foodinfo', userdata);
-  */
 });
 
 router.findItem = function(user, login, id, callback) {

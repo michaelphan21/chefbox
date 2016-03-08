@@ -5,18 +5,12 @@ var PostModalController = {
 	postInputDescriptionElementName: "#description",
 	postInputUpperPriceElementName: "#upperPrice",
 	postInputLowerPriceElementName: "#lowerPrice",
-	postInputCanvasElementName: "#camera-canvas",
-	postInputVideoElementName: "#camera-video",
-	postVideoDivElementName: "#video-div",
-	postCanvasDivElementName: "#canvas-div",
-	cameraBtnElementName: "#camera-button",
-	startBtnElementName: "#start-button",
-	stopBtnElementName: "#stop-button",
 	postBtnElementName: "#postBtn",
 	clearBtnElementName: "#clearBtn",
 	postInputAvailableTimesElementName: "#availableTimes",
 	postInputLatElementName: "#lat",
 	postInputLngElementName: "#lng",
+	postInputImageElementName: "#camera",
 
 	postInputFoodname: null,
 	postInputQuantity: null,
@@ -24,40 +18,27 @@ var PostModalController = {
 	postInputDescription: null,
 	postInputUpperPrice: null,
 	postInputLowerPrice: null,
-	postInputCanvas: null,
-	postInputVideo: null,
-	postVideoDiv: null,
-	postCanvasDiv: null,
 	postInputAvailableTimes: null,
 	postInputLat: null,
 	postInputLng: null,
+	postInputImage: null,
 
-	startBtn: null,
-	stopBtn: null,
 	postBtn: null,
 	clearBtn: null,
-	cameraBtn: null,
 
-	imageData: null,
 	imageDataURL: null,
 
-	clearFields: function() {
-		var base = this;
+	clearFields: function(base) {
 		base.postInputFoodname.val("");
 		base.postInputQuantity.val("");
 		base.postInputIngredient.val("");
 		base.postInputDescription.val("");
 		base.postInputUpperPrice.val("");
 		base.postInputLowerPrice.val("");
-		base.postVideoDiv.hide();
-		base.postInputLat.val("");
-		base.postInputLng.val("");
-		document.getElementById('camera-video').pause();
 	},
 
-	finishPost: function() {
-		var base = this;
-		base.clearFields();
+	finishPost: function(base) {
+		base.clearFields(base);
 		alert("Your food was posted!");
 	},
 
@@ -70,131 +51,87 @@ var PostModalController = {
 		base.postInputDescription = $(base.postInputDescriptionElementName);
 		base.postInputUpperPrice = $(base.postInputUpperPriceElementName);
 		base.postInputLowerPrice = $(base.postInputLowerPriceElementName);
-		base.postInputCanvas = $(base.postInputCanvasElementName);
-		base.postInputVideo = $(base.postInputVideoElementName);
-		base.postVideoDiv = $(base.postVideoDivElementName);
-		base.postCanvasDiv = $(base.postCanvasDivElementName);
 		base.postInputAvailableTimes = $(base.postInputAvailableTimesElementName);
 		base.postInputLat = $(base.postInputLatElementName);
 		base.postInputLng = $(base.postInputLngElementName);
-
-		base.startBtn = $(base.startBtnElementName);
-		base.stopBtn = $(base.stopBtnElementName);
+		base.postInputImage = $(base.postInputImageElementName);
 		base.postBtn = $(base.postBtnElementName);
 		base.clearBtn = $(base.clearBtnElementName);
-		base.cameraBtn = $(base.cameraBtnElementName);
-		base.cameraBtn.prop("disabled", true);
 
 		return base;
 	},
 
-	addClickEvents: function() {
+	addEvents: function() {
 		var base = this;
+
+		base.postInputImage.on('change', function(e) {
+			if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
+				alert("This browser does not fully support the file APIs and therefore, we failed to load the image. :( Please try other browsers, such as Google Chrome.");
+				return ;
+			}
+
+			var fr = new FileReader();
+			var imageFiles = e.target.files;
+
+      fr.addEventListener("load", function(e){
+        var pic = e.target;
+        base.imageDataURL = pic.result;    
+      });
+			fr.readAsDataURL(imageFiles[0]);
+		});
 
 		base.postBtn.on("click", function(e) {
 			e.preventDefault();
-			console.log('postBtn click');
-			var postURL = '/postyourfood';
-			var price = parseFloat(base.postInputUpperPrice.val());
-			var lowerPrice = parseFloat(base.postInputLowerPrice.val());
-			if (lowerPrice > 9) {
-				lowerPrice = lowerPrice / 100;
+			if (!base.imageDataURL) {
+				alert("Please choose an image file to upload");
 			} else {
-				lowerPrice = lowerPrice / 10;
-			}
-			price = price + lowerPrice;
-			console.log('price: '+ price);
-			var data = {
-				foodName: base.postInputFoodname.val()
-				,price: price
-				,quantity: base.postInputQuantity.val()
-				,ingredients: base.postInputIngredient.val()
-				,description: base.postInputDescription.val()
-				,imageURL: base.imageDataURL
-				,latLng: {
-					lat: base.postInputLat.val()
-					,lng: base.postInputLng.val()
+				console.log('postBtn click');
+				var postURL = '/postyourfood';
+				var price = parseFloat(base.postInputUpperPrice.val());
+				var lowerPrice = parseFloat(1+base.postInputLowerPrice.val());
+				if (lowerPrice > 99) {
+					lowerPrice = lowerPrice / 100;
+					lowerPrice -= 1;
+				} else {
+					lowerPrice = lowerPrice / 10;
+					lowerPrice -= 1;
 				}
-			};
-			
-			$.ajax({
-				type: "POST"
-				,url: postURL
-				,data: data
-				,success: base.finishPost
-				,async: true
-			});
-			
+				price = price + lowerPrice;
+				console.log('price: '+ price);
+				var data = {
+					foodName: base.postInputFoodname.val()
+					,price: price
+					,quantity: base.postInputQuantity.val()
+					,ingredients: base.postInputIngredient.val()
+					,description: base.postInputDescription.val()
+					,imageURL: base.imageDataURL
+					,latLng: {
+						lat: base.postInputLat.val()
+						,lng: base.postInputLng.val()
+					}
+				};
+				
+				$.ajax({
+					type: "POST"
+					,url: postURL
+					,data: data
+					,success: base.finishPost(base)
+					,async: true
+				});
+			}
 		});
 
 		base.clearBtn.on("click", function(e) {
 			e.preventDefault();
-			base.clearFields();
-		});
-
-		base.startBtn.on("click", function(e) {
-			e.preventDefault();
-			base.startBtn.hide();
-			base.stopBtn.show();
-			base.postVideoDiv.show();
-			base.capture(base.postInputVideo, base.postInputCanvas, base.cameraBtn);
-			base.cameraBtn.prop("disabled", false);
-		});
-
-		base.stopBtn.on("click", function(e) {
-			e.preventDefault();
-			base.startBtn.show();
-			base.stopBtn.hide();
-			base.cameraBtn.prop("disabled", true);
-			base.postVideoDiv.hide();
-			document.getElementById('camera-video').pause();
+			base.clearFields(base);
 		});
 
 		return base;
 	},
 
-	capture: function(video, canvas, snapshotButton) {
-		var base = this;
-		//video.show();
-	  //Adopted from https://dev.opera.com/articles/media-capture-in-mobile-browsers/
-	  //Setup navigator for all versions of browsers.
-	  navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia ||
-	              navigator.mozGetUserMedia || navigator.msGetUserMedia;
-	  var ctx = canvas[0].getContext('2d');
-
-	  var successCallback = function(mediaStream) {
-	    //The success callback function. On user click of snapshot button,
-	    //draw the image on the canvas.
-	    video.attr('src', window.URL.createObjectURL(mediaStream));
-
-	    snapshotButton.click(function(e) {
-	      console.log("Taking photo");
-				e.preventDefault();
-	      //Calculate dimension of photo from the video element.
-	      var width = video.width();
-	      var height = video.height();
-	      canvas.attr('width', width);
-	      canvas.attr('height', height);
-	      ctx.drawImage(video[0], 0, 0, width, height);
-	      base.imageData = ctx.getImageData(0, 0, width, height).data;
-	      base.imageDataURL = document.getElementById("camera-canvas").toDataURL("image/png");
-	    });
-	  };
-
-	  var errorCallback = function() {
-	    //The error callback function. If getUserMedia errored, print that
-	    //we failed.
-	    console.log('Capture failed');
-	  };
-
-	  //Register the success and error callbacks with getUserMedia.
-	  navigator.getUserMedia({ 'video': true },
-	      successCallback, errorCallback);
-	},
-
 	initialize: function() {
 		var base = this;
-		base.findElements().addClickEvents();
+		base.findElements().addEvents();
 	}
 };
 

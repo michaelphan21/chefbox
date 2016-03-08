@@ -123,7 +123,7 @@
         <hr>
       {{/each}}
     {{else}}
-      <input type="hidden" id="len" value=0/>
+      <input type="hidden" id="len" value="0"/>
       {{> noresult}}
     {{/if}}
 
@@ -141,9 +141,11 @@
   <!-- Necessary for the Bootstrap modal view -->
   <script src="js/bootstrap.min.js"></script> 
   <script src="js/search.js"></script>
-  <script src="js/foodinfoModal.js"></script>
+  {{#if docs}}
+    <script src="js/foodinfoModal.js"></script>
+  {{/if}}
   <script src="js/map/googleMapSearch.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=searchInitMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCojkxEmZw9xNuJPjaR97T2s4J8_gU1W9U&callback=GoogleMapsController.searchInitMap" async defer></script>
 
 </body>
 </html>
