@@ -1,6 +1,11 @@
 var GoogleMapsController = {
 
-  postSearchMarker: null
+  latElementId: 'lat'
+  ,lngElementId: 'lng'
+
+  ,postSearchMarker: null
+  ,lat: null
+  ,lng: null
 
   // Adds a marker to the map.
   ,addMarker: function(location, map) {
@@ -100,28 +105,32 @@ var GoogleMapsController = {
       map.fitBounds(bounds);
     });
 
-    google.maps.event.addListener(map, 'click', function(event) {
+    google.maps.event.addListener(map, 'click', function(e) {
       if (base.postSearchMarker) {
         base.postSearchMarker.setMap(null);
       }
-      base.postSearchMarker = base.addMarker(event.latLng, map);
-      lat = event.latLng.lat();
-      lng = event.latLng.lng();
+      base.postSearchMarker = base.addMarker(e.latLng, map);
+      base.lat.value = e.latLng.lat();
+      base.lng.value = e.latLng.lng();
     });
   }
 
   ,searchInitMap: function() {
     var base = this;
+    console.log("a");
     var map = base.createMap();
     var markers = [];
     // fetch the lat and lng data of each location from the hidden fields
+    console.log("b");
     var numOfPoints = parseInt(document.getElementById('len').value);
     var bounds = new google.maps.LatLngBounds();
-
+    console.log("c");
+    /* NaN causing a weird behavior in google.maps.LatLng? */
     for (var i = 0; i < numOfPoints; ++i) {
       var latLng = new google.maps.LatLng(
         parseFloat(document.getElementById('lat'+i).value),
         parseFloat(document.getElementById('lng'+i).value)
+        //null,null
       );
       var marker = new google.maps.Marker({
         map: map
@@ -142,9 +151,13 @@ var GoogleMapsController = {
       });
 
       markers.push(marker);
+      console.log("d");
       bounds.extend(latLng);
+      console.log("e");
     }
+    console.log("z");
     map.fitBounds(bounds);    
+    console.log("z1");
   }
 
   ,foodinfoInitMap: function() {
@@ -163,17 +176,24 @@ var GoogleMapsController = {
 
   ,fixElements: function() {
     var base = this;
+    base.lat = document.getElementById(base.latElementId);
+    base.lng = document.getElementById(base.lngElementId);
     return base;
   }
 
   ,initialize: function() {
+    console.log("z2");
     var base = this;
+    console.log("z3");
     base.fixElements();
+    console.log("z4");
   }
 };
 
 var GoogleMapsController = GoogleMapsController || {};
 
 $(document).ready(function() {
+  console.log("-a");
   GoogleMapsController.initialize();
+  console.log("-b");
 });

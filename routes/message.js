@@ -4,11 +4,12 @@ var app = express();
 var http = require('http').Server(app);
 
 router.get('/', function(req, res) {
-	var userdata = {
-		login: req.session.login,
-		user: req.session.user
+	var data = {
+		login: req.session.login
+		,email: req.query.email
+		,user: req.session.user
 	};
-  res.render('message', userdata);
+  res.render('message', data);
 });
 
 module.exports = router;
