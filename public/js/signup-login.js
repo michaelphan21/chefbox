@@ -85,8 +85,8 @@ var SignupModalController = {
     base.signupInputConfirmPasswordStatus.hide();
     base.signupInputEmailStatus.hide();
 
-    base.loginInputEmailStatus.hide();
-    base.loginInputPasswordStatus.hide();
+    base.loginInputEmailStatus.css('color', '#ff8d00');
+    base.loginInputPasswordStatus.css('color', '#ff8d00');
 
     base.loginInputEmailStatus.hide();
     base.loginInputPasswordStatus.hide();
